@@ -11,7 +11,7 @@ import UIKit
 class ArchiveQuestionCell: UITableViewCell {
     
     @IBOutlet weak var questionTitle: UILabel!
-    @IBOutlet weak var checkmarkIndicator: UIButton!
+    @IBOutlet weak var checkmarkIndicator: UIImageView!
     @IBOutlet weak var index: UILabel!
     
 }

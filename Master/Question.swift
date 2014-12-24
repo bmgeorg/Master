@@ -14,4 +14,5 @@ class Question: RLMObject {
     dynamic var title = "DEFAULT_TITLE"
     dynamic var question = "DEFAULT_QUESTION"
     dynamic var answer = "DEFAULT_ANSWER"
+    dynamic var solved = false
 }
