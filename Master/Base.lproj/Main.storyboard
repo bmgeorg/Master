@@ -123,7 +123,7 @@
                                     <outlet property="checkmarkIndicator" destination="VZJ-1s-CIv" id="jMa-w2-645"/>
                                     <outlet property="index" destination="edI-ft-Jsz" id="gnU-xB-53w"/>
                                     <outlet property="questionTitle" destination="jBX-8G-puY" id="I27-LP-Kwa"/>
-                                    <segue destination="Zqv-Gb-cbp" kind="show" id="532-JN-8Hj"/>
+                                    <segue destination="Zqv-Gb-cbp" kind="show" identifier="showQuestion" id="532-JN-8Hj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -185,6 +185,9 @@
                                         <state key="normal" title="Enter">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="checkAnswer" destination="Zqv-Gb-cbp" eventType="touchUpInside" id="Gld-Zi-CKX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -217,6 +220,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Question Title" id="cfb-Ue-4OX"/>
+                    <connections>
+                        <outlet property="answerField" destination="pYE-Pb-sEx" id="Wes-p2-AmV"/>
+                        <outlet property="bottomConstraint" destination="8kx-kD-8OU" id="f95-1B-NuY"/>
+                        <outlet property="enterButton" destination="9za-74-Lqt" id="1Jm-kx-0zt"/>
+                        <outlet property="explanationLabel" destination="CHI-eF-68Z" id="UZZ-gA-Nyn"/>
+                        <outlet property="questionLabel" destination="4Md-6Q-IVT" id="U0D-ea-0ec"/>
+                        <outlet property="questionTitle" destination="cfb-Ue-4OX" id="Xef-Q8-ycC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFI-Rz-huE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

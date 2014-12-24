@@ -32,4 +32,15 @@ class ArchiveViewController: UITableViewController {
         }
         return cell
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "showQuestion") {
+            let dest = segue.destinationViewController as QuestionViewController
+            if let index = self.tableView.indexPathForSelectedRow() {
+                dest.question = questions.objectAtIndex(UInt(index.row)) as Question
+            }
+        } else {
+            assert(false, "Unrecognized segue identifier from ArchiveViewController")
+        }
+    }
 }
