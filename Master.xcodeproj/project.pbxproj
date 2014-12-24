@@ -16,6 +16,7 @@
 		8B4638241A4A3129008E3BA3 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4638231A4A3129008E3BA3 /* libc++.dylib */; };
 		8B4638261A4A314B008E3BA3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4638251A4A314B008E3BA3 /* Realm.framework */; };
 		8B4638281A4A315A008E3BA3 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4638271A4A315A008E3BA3 /* RLMSupport.swift */; };
+		8B46385A1A4A4D8D008E3BA3 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4638591A4A4D8D008E3BA3 /* QuestionViewController.swift */; };
 		8BB6407E1A4A05C700F6A4A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6407D1A4A05C700F6A4A1 /* AppDelegate.swift */; };
 		8BB640831A4A05C700F6A4A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB640811A4A05C700F6A4A1 /* Main.storyboard */; };
 		8BB640851A4A05C700F6A4A1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BB640841A4A05C700F6A4A1 /* Images.xcassets */; };
@@ -43,6 +44,7 @@
 		8B4638231A4A3129008E3BA3 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		8B4638251A4A314B008E3BA3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		8B4638271A4A315A008E3BA3 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		8B4638591A4A4D8D008E3BA3 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		8BB640781A4A05C700F6A4A1 /* Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Master.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB6407C1A4A05C700F6A4A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BB6407D1A4A05C700F6A4A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				8B4638141A4A0A03008E3BA3 /* MainMenuViewController.swift */,
 				8B4638161A4A0F37008E3BA3 /* ArchiveViewController.swift */,
 				8B46381C1A4A200F008E3BA3 /* ArchiveQuestionCell.swift */,
+				8B4638591A4A4D8D008E3BA3 /* QuestionViewController.swift */,
 				8BB640811A4A05C700F6A4A1 /* Main.storyboard */,
 				8BB640841A4A05C700F6A4A1 /* Images.xcassets */,
 				8BB640861A4A05C700F6A4A1 /* LaunchScreen.xib */,
@@ -253,6 +256,7 @@
 				8B46381D1A4A200F008E3BA3 /* ArchiveQuestionCell.swift in Sources */,
 				8B4638211A4A30AF008E3BA3 /* Question.swift in Sources */,
 				8B4638201A4A30AF008E3BA3 /* QuestionBank.swift in Sources */,
+				8B46385A1A4A4D8D008E3BA3 /* QuestionViewController.swift in Sources */,
 				8BB6407E1A4A05C700F6A4A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
