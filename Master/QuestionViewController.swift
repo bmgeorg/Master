@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Realm
 
 class QuestionViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var questionTitle: UINavigationItem!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var explanationLabel: UILabel!
+    @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var answerField: UITextField!
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -27,13 +29,17 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     }
     
     @IBAction func checkAnswer() {
-        if(answerField.text == question.answer) {
-            explanationLabel.text = "Correct!"
-            explanationLabel.textColor = UIColor.greenColor()
+        if(answerField.text.uppercaseString == question.answer.uppercaseString) {
+            feedbackLabel.text = "Correct!"
+            feedbackLabel.textColor = UIColor.greenColor()
+            RLMRealm.defaultRealm().beginWriteTransaction()
+            question.solved = true
+            RLMRealm.defaultRealm().commitWriteTransaction()
         } else {
-            explanationLabel.text = "Wrong"
-            explanationLabel.textColor = UIColor.redColor()
+            feedbackLabel.text = "Wrong!"
+            feedbackLabel.textColor = UIColor.redColor()
         }
+        explanationLabel.text = question.explanation
     }
     
     override func viewDidLoad() {
@@ -70,7 +76,7 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     
     //close keyboard on return press
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        checkAnswer()
+        dismissKeyboard()
         return false
     }
     

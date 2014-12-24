@@ -28,7 +28,6 @@ class QuestionBank {
             question.question = "Does Java allow multiple inheritance?"
             question.answer = "No"
             question.difficulty = "basic"
-            question.solved = true
             questions.append(question)
             
             realm.addObjects(questions)
@@ -45,13 +44,13 @@ class QuestionBank {
             question.question = "What is virtual method in Java?"
             question.answer = "42"
             question.difficulty = "intermediate"
-            question.solved = true
             questions.append(question)
             
             question = Question()
             question.title = "Does Java allow multiple inheritance?"
             question.question = "Does Java allow multiple inheritance?"
             question.answer = "No"
+            question.explanation = "Of course not, ya moron. Multiple inheritance leads to the triangle of death."
             question.difficulty = "intermediate"
             questions.append(question)
             

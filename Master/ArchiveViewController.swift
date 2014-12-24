@@ -14,6 +14,13 @@ class ArchiveViewController: UITableViewController {
     @IBOutlet weak var navTitle: UINavigationItem!
     var questions: RLMResults!
     
+    //This is a hack to reload checkmark indicators after popping from QuestionViewController
+    //TODO: find a more elegant solution. Perhaps send notification from QuestionViewController when popping off to tell ArchiveVC to reloadData()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

@@ -101,14 +101,12 @@
                                         </label>
                                         <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.png" translatesAutoresizingMaskIntoConstraints="NO" id="VZJ-1s-CIv">
                                             <rect key="frame" x="8" y="8" width="28" height="27"/>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="28" id="5eg-ID-fkE"/>
                                                 <constraint firstAttribute="width" constant="28" id="qfc-cv-d0P"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="edI-ft-Jsz" firstAttribute="leading" secondItem="VZJ-1s-CIv" secondAttribute="trailing" constant="8" symbolic="YES" id="8Ra-QA-Y5A"/>
                                         <constraint firstItem="edI-ft-Jsz" firstAttribute="centerY" secondItem="T9i-78-JlK" secondAttribute="centerY" id="Aee-kx-JMt"/>
@@ -169,20 +167,13 @@
                                             <constraint firstAttribute="height" constant="2" id="qIv-dh-f5S"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHI-eF-68Z">
-                                        <rect key="frame" x="8" y="47" width="584" height="21"/>
-                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in velit porttitor neque suscipit venenatis at maximus massa. Fusce suscipit libero nec sem pretium maximus ac ut ante. Vestibulum vel nunc lorem. Aenean bibendum lorem leo, ut congue velit elementum eu. Integer non consequat libero, sit amet finibus enim. Pellentesque condimentum, nibh id aliquam imperdiet, ligula mauris fringilla augue, ut tincidunt lacus lectus vel est. Cras sollicitudin varius odio vel pulvinar. In at eleifend augue. Donec non malesuada orci. Phasellus a maximus ipsum. Sed dictum magna non ipsum sagittis feugiat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in velit porttitor neque suscipit venenatis at maximus massa. Fusce suscipit libero nec sem pretium maximus ac ut ante. Vestibulum vel nunc lorem. Aenean bibendum lorem leo, ut congue velit elementum eu. Integer non consequat libero, sit amet finibus enim. Pellentesque condimentum, nibh id aliquam imperdiet, ligula mauris fringilla augue, ut tincidunt lacus lectus vel est. Cras sollicitudin varius odio vel pulvinar. In at eleifend augue. Donec non malesuada orci. Phasellus a maximus ipsum. Sed dictum magna non ipsum sagittis feugiat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in velit porttitor neque suscipit venenatis at maximus massa. Fusce suscipit libero nec sem pretium maximus ac ut ante. Vestibulum vel nunc lorem. Aenean bibendum lorem leo, ut congue velit elementum eu. Integer non consequat libero, sit amet finibus enim. Pellentesque condimentum, nibh id aliquam imperdiet, ligula mauris fringilla augue, ut tincidunt lacus lectus vel est. Cras sollicitudin varius odio vel pulvinar. In at eleifend augue. Donec non malesuada orci. Phasellus a maximus ipsum. Sed dictum magna non ipsum sagittis feugiat. </mutableString>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pYE-Pb-sEx">
-                                        <rect key="frame" x="8" y="76" width="539" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pYE-Pb-sEx">
+                                        <rect key="frame" x="8" y="592" width="539" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9za-74-Lqt">
-                                        <rect key="frame" x="555" y="76" width="37" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9za-74-Lqt">
+                                        <rect key="frame" x="555" y="592" width="37" height="30"/>
                                         <state key="normal" title="Enter">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -190,6 +181,19 @@
                                             <action selector="checkAnswer" destination="Zqv-Gb-cbp" eventType="touchUpInside" id="Gld-Zi-CKX"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSN-pw-HES">
+                                        <rect key="frame" x="8" y="47" width="584" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHI-eF-68Z">
+                                        <rect key="frame" x="8" y="76" width="584" height="508"/>
+                                        <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in velit porttitor neque suscipit venenatis at maximus massa. Fusce suscipit libero nec sem pretium maximus ac ut ante. Vestibulum vel nunc lorem. Aenean bibendum lorem leo, ut congue velit elementum eu. Integer non consequat libero, sit amet finibus enim. Pellentesque condimentum, nibh id aliquam imperdiet, ligula mauris fringilla augue, ut tincidunt lacus lectus vel est. Cras sollicitudin varius odio vel pulvinar. In at eleifend augue. Donec non malesuada orci. Phasellus a maximus ipsum. Sed dictum magna non ipsum sagittis feugiat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in velit porttitor neque suscipit venenatis at maximus massa. Fusce suscipit libero nec sem pretium maximus ac ut ante. Vestibulum vel nunc lorem. Aenean bibendum lorem leo, ut congue velit elementum eu. Integer non consequat libero, sit amet finibus enim. Pellentesque condimentum, nibh id aliquam imperdiet, ligula mauris fringilla augue, ut tincidunt lacus lectus vel est. Cras sollicitudin varius odio vel pulvinar. In at eleifend augue. Donec non malesuada orci. Phasellus a maximus ipsum. Sed dictum magna non ipsum sagittis feugiat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in velit porttitor neque suscipit venenatis at maximus massa. Fusce suscipit libero nec sem pretium maximus ac ut ante. Vestibulum vel nunc lorem. Aenean bibendum lorem leo, ut congue velit elementum eu. Integer non consequat libero, sit amet finibus enim. Pellentesque condimentum, nibh id aliquam imperdiet, ligula mauris fringilla augue, ut tincidunt lacus lectus vel est. Cras sollicitudin varius odio vel pulvinar. In at eleifend augue. Donec non malesuada orci. Phasellus a maximus ipsum. Sed dictum magna non ipsum sagittis feugiat. </mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailingMargin" secondItem="CHI-eF-68Z" secondAttribute="trailing" id="0sy-dr-HlP"/>
@@ -200,12 +204,15 @@
                                     <constraint firstAttribute="bottom" secondItem="pYE-Pb-sEx" secondAttribute="bottom" constant="8" id="8kx-kD-8OU"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="4Md-6Q-IVT" secondAttribute="trailing" id="8ta-dx-uEA"/>
                                     <constraint firstItem="9za-74-Lqt" firstAttribute="centerY" secondItem="pYE-Pb-sEx" secondAttribute="centerY" id="G8X-6e-nKV"/>
-                                    <constraint firstItem="CHI-eF-68Z" firstAttribute="top" secondItem="VMZ-TN-W8q" secondAttribute="bottom" constant="8" symbolic="YES" id="KQC-JM-pvD"/>
+                                    <constraint firstItem="LSN-pw-HES" firstAttribute="leading" secondItem="ftk-bC-bQe" secondAttribute="leadingMargin" id="RGe-4Y-Jzy"/>
+                                    <constraint firstItem="CHI-eF-68Z" firstAttribute="top" secondItem="LSN-pw-HES" secondAttribute="bottom" constant="8" id="SNT-Qm-RO1"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="LSN-pw-HES" secondAttribute="trailing" id="VJO-Ae-pu7"/>
                                     <constraint firstItem="9za-74-Lqt" firstAttribute="leading" secondItem="pYE-Pb-sEx" secondAttribute="trailing" constant="8" symbolic="YES" id="c97-nP-6S3"/>
                                     <constraint firstItem="pYE-Pb-sEx" firstAttribute="leading" secondItem="ftk-bC-bQe" secondAttribute="leadingMargin" id="cwX-TB-WLE"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="9za-74-Lqt" secondAttribute="trailing" id="g6I-So-tgo"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="VMZ-TN-W8q" secondAttribute="trailing" id="jDM-yf-ux0"/>
                                     <constraint firstItem="pYE-Pb-sEx" firstAttribute="top" secondItem="CHI-eF-68Z" secondAttribute="bottom" constant="8" symbolic="YES" id="mds-bW-1ja"/>
+                                    <constraint firstItem="LSN-pw-HES" firstAttribute="top" secondItem="VMZ-TN-W8q" secondAttribute="bottom" constant="8" id="nN4-sd-n1s"/>
                                     <constraint firstItem="VMZ-TN-W8q" firstAttribute="top" secondItem="4Md-6Q-IVT" secondAttribute="bottom" constant="8" symbolic="YES" id="pJf-9y-rP2"/>
                                     <constraint firstItem="CHI-eF-68Z" firstAttribute="leading" secondItem="ftk-bC-bQe" secondAttribute="leadingMargin" id="uUw-ll-BMV"/>
                                 </constraints>
@@ -225,6 +232,7 @@
                         <outlet property="answerField" destination="pYE-Pb-sEx" id="Wes-p2-AmV"/>
                         <outlet property="enterButton" destination="9za-74-Lqt" id="1Jm-kx-0zt"/>
                         <outlet property="explanationLabel" destination="CHI-eF-68Z" id="UZZ-gA-Nyn"/>
+                        <outlet property="feedbackLabel" destination="LSN-pw-HES" id="eZ6-6R-jbP"/>
                         <outlet property="questionLabel" destination="4Md-6Q-IVT" id="U0D-ea-0ec"/>
                         <outlet property="questionTitle" destination="cfb-Ue-4OX" id="Xef-Q8-ycC"/>
                         <outlet property="scrollView" destination="ftk-bC-bQe" id="fxH-0A-MsT"/>
