@@ -17,17 +17,11 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     @IBOutlet weak var answerField: UITextField!
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
-    
+
     var question: Question!
     
-    let ANIMATION_DURATION: NSTimeInterval = 1
     let BOTTOM_MARGIN: CGFloat = 8
-    
-    internal func configureView() {
-        questionTitle.title = question.title
-        questionLabel.text = question.question
-    }
-    
+
     @IBAction func checkAnswer() {
         if(answerField.text.uppercaseString == question.answer.uppercaseString) {
             feedbackLabel.text = "Correct!"
@@ -44,11 +38,14 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
         answerField.delegate = self
+        
+        questionTitle.title = question.title
+        questionLabel.text = question.question
         addDismissKeyboardRecognizer()
+        setDefaultBottomInsets()
     }
     
     deinit {
@@ -57,21 +54,22 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     
     // Mark: Keyboard Handling
     
+    internal func setDefaultBottomInsets() {
+        scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, BOTTOM_MARGIN, 0.0);
+        scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
+    }
+    
     func keyboardWillShow(notification: NSNotification) {
         let info = notification.userInfo!
         let keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-        let contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardFrame.height, 0.0);
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
+        scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardFrame.height+BOTTOM_MARGIN, 0.0);
+        scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardFrame.height, 0.0);
         
-        var frame = CGRectOffset(answerField.frame, 0, BOTTOM_MARGIN)
-        self.scrollView.scrollRectToVisible(frame, animated: true)
+        self.scrollView.scrollRectToVisible(answerField.frame, animated: true)
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        let contentInsets = UIEdgeInsetsZero
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
+        setDefaultBottomInsets()
     }
     
     //close keyboard on return press
