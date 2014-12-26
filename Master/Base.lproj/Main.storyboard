@@ -301,7 +301,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopicCell" rowHeight="60" id="a8S-14-XRJ" customClass="TopicCell" customModule="Master" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TopicCell" rowHeight="60" id="a8S-14-XRJ" customClass="TopicCell" customModule="Master" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a8S-14-XRJ" id="Hby-oM-E17">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -324,8 +324,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3f-yG-Dg2" userLabel="Topic Label">
                                             <rect key="frame" x="44" y="19" width="88" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
+                                            <color key="highlightedColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
                                     <constraints>
@@ -341,6 +340,7 @@
                                         <constraint firstAttribute="centerY" secondItem="C3f-yG-Dg2" secondAttribute="centerY" id="vMH-aP-3Ip"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="completedLabel" destination="C0h-Uo-LEH" id="67c-Kr-Gca"/>
                                     <outlet property="outOfLabel" destination="Qvl-Qk-MQ1" id="Vqp-xB-Byp"/>
