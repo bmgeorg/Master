@@ -8,9 +8,9 @@
 
 import UIKit
 
-class MainMenuViewController: UIViewController {
+class OldMainMenuViewController: UIViewController {
     
-    override func viewDidLoad() {
+   /* override func viewDidLoad() {
         super.viewDidLoad()
         QuestionBank.populateQuestions()
     }
@@ -29,5 +29,5 @@ class MainMenuViewController: UIViewController {
         } else {
             assert(false, "Unrecognized segue identifier from MainMenuViewController")
         }
-    }
+    }*/
 }

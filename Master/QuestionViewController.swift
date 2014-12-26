@@ -10,7 +10,7 @@ import UIKit
 import Realm
 
 class QuestionViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
-    @IBOutlet weak var questionTitle: UINavigationItem!
+    /*@IBOutlet weak var questionTitle: UINavigationItem!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var feedbackLabel: UILabel!
@@ -93,5 +93,5 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     
     internal func dismissKeyboard() {
         answerField.resignFirstResponder()
-    }
+    }*/
 }

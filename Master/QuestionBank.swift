@@ -11,79 +11,73 @@ import Realm
 
 class QuestionBank {
     
-    class func basic(realm: RLMRealm) {
-        let basicQuestions = Question.objectsInRealm(realm, "difficulty = 'basic'")
-        if basicQuestions.count == 0 {
-            var questions = [Question]()
-            
-            var question = Question()
-            question.title = "What is a virtual method in Java?"
-            question.question = "What is virtual method in Java?"
-            question.answer = "42"
-            question.difficulty = "basic"
-            questions.append(question)
-            
-            question = Question()
-            question.title = "Does Java allow multiple inheritance?"
-            question.question = "Does Java allow multiple inheritance?"
-            question.answer = "No"
-            question.difficulty = "basic"
-            questions.append(question)
-            
-            realm.addObjects(questions)
-        }
+    class func controlFlow() {
+        let topic = Topic()
+        topic.topic = "Control Flow"
+        topic.order = orderForTopic("Control Flow")
+        
+        var questions = [Question]()
+        
+        var question = Question()
+        question.prompt = "What is a virtual method in Java?"
+        question.answer = "42"
+        question.explanation = "An explanation of a virtual method."
+        question.difficulty = 5
+        question.solved = true
+        questions.append(question)
+        
+        question = Question()
+        question.prompt = "Does Java allow multiple inheritance?"
+        question.answer = "No"
+        question.difficulty = 3
+        questions.append(question)
+        
+        topic.questions.addObjects(questions)
+        RLMRealm.defaultRealm().addObject(topic)
     }
     
-    class func intermediate(realm: RLMRealm) {
-        let intermediateQuestions = Question.objectsInRealm(realm, "difficulty = 'intermediate'")
-        if intermediateQuestions.count == 0 {
-            var questions = [Question]()
-            
-            var question = Question()
-            question.title = "What is a virtual method in Java?"
-            question.question = "What is virtual method in Java?"
-            question.answer = "42"
-            question.difficulty = "intermediate"
-            questions.append(question)
-            
-            question = Question()
-            question.title = "Does Java allow multiple inheritance?"
-            question.question = "Does Java allow multiple inheritance?"
-            question.answer = "No"
-            question.explanation = "Of course not, ya moron. Multiple inheritance leads to the triangle of death."
-            question.difficulty = "intermediate"
-            questions.append(question)
-            
-            realm.addObjects(questions)
-        }
+    class func generics() {
+        let topic = Topic()
+        topic.topic = "Generics"
+        topic.order = orderForTopic("Generics")
+        
+        var questions = [Question]()
+        
+        var question = Question()
+        question.prompt = "What is a virtual method in Java?"
+        question.answer = "42"
+        question.explanation = "An explanation of a virtual method."
+        question.difficulty = 5
+        questions.append(question)
+        
+        question = Question()
+        question.prompt = "Does Java allow multiple inheritance?"
+        question.answer = "No"
+        question.difficulty = 3
+        questions.append(question)
+        
+        topic.questions.addObjects(questions)
+        RLMRealm.defaultRealm().addObject(topic)
     }
     
-    class func advanced(realm: RLMRealm) {
-        let advancedQuestions = Question.objectsInRealm(realm, "difficulty = 'advanced'")
-        if advancedQuestions.count == 0 {
-            var questions = [Question]()
-            
-            var question = Question()
-            question.title = "Instance Var Instantiation"
-            question.question = "Does Java initialize instance variables to 0?"
-            question.answer = "Yes"
-            question.difficulty = "advanced"
-            questions.append(question)
-            
-            realm.addObjects(questions)
+    class func orderForTopic(topic: String) -> Int {
+        if(topic == "Control Flow") {
+            return 0;
         }
+        if(topic == "Generics") {
+            return 1;
+        }
+        assertionFailure("Unrecognized topic in QuestionBank")
     }
     
     class func populateQuestions() {
         let realm = RLMRealm.defaultRealm()
         
         realm.beginWriteTransaction()
-        
         realm.deleteAllObjects()
         
-        basic(realm)
-        intermediate(realm)
-        advanced(realm)
+        controlFlow()
+        generics()
         
         realm.commitWriteTransaction()
     }

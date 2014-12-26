@@ -11,7 +11,7 @@ import Realm
 
 class ArchiveViewController: UITableViewController {
     
-    @IBOutlet weak var navTitle: UINavigationItem!
+    /*@IBOutlet weak var navTitle: UINavigationItem!
     var questions: RLMResults!
     
     //This is a hack to reload checkmark indicators after popping from QuestionViewController
@@ -49,5 +49,5 @@ class ArchiveViewController: UITableViewController {
         } else {
             assert(false, "Unrecognized segue identifier from ArchiveViewController")
         }
-    }
+    }*/
 }

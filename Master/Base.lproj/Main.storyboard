@@ -301,7 +301,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="TopicCell" rowHeight="60" id="a8S-14-XRJ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopicCell" rowHeight="60" id="a8S-14-XRJ" customClass="TopicCell" customModule="Master" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a8S-14-XRJ" id="Hby-oM-E17">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -321,8 +321,8 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="diagonal.png" translatesAutoresizingMaskIntoConstraints="NO" id="xFV-mZ-iSD" userLabel="Diagonal">
                                             <rect key="frame" x="8" y="8" width="28" height="43"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Topic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3f-yG-Dg2">
-                                            <rect key="frame" x="44" y="19" width="41" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3f-yG-Dg2" userLabel="Topic Label">
+                                            <rect key="frame" x="44" y="19" width="88" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -333,12 +333,19 @@
                                         <constraint firstItem="xFV-mZ-iSD" firstAttribute="leading" secondItem="Hby-oM-E17" secondAttribute="leadingMargin" id="9cZ-d3-yvV"/>
                                         <constraint firstItem="Qvl-Qk-MQ1" firstAttribute="bottom" secondItem="Hby-oM-E17" secondAttribute="bottomMargin" id="A0f-XI-3UW"/>
                                         <constraint firstItem="Qvl-Qk-MQ1" firstAttribute="trailing" secondItem="xFV-mZ-iSD" secondAttribute="trailing" id="IlJ-RN-DCU"/>
+                                        <constraint firstItem="C3f-yG-Dg2" firstAttribute="leading" secondItem="Qvl-Qk-MQ1" secondAttribute="trailing" constant="8" symbolic="YES" id="V3s-YZ-EXi"/>
                                         <constraint firstItem="C0h-Uo-LEH" firstAttribute="leading" secondItem="Hby-oM-E17" secondAttribute="leadingMargin" id="gZu-n9-oRX"/>
                                         <constraint firstItem="Qvl-Qk-MQ1" firstAttribute="leading" secondItem="C0h-Uo-LEH" secondAttribute="trailing" constant="8" symbolic="YES" id="kOf-zs-6XH"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="xFV-mZ-iSD" secondAttribute="bottom" id="mKM-kX-u6r"/>
                                         <constraint firstItem="C0h-Uo-LEH" firstAttribute="top" secondItem="Hby-oM-E17" secondAttribute="topMargin" id="nDA-ks-tS0"/>
+                                        <constraint firstAttribute="centerY" secondItem="C3f-yG-Dg2" secondAttribute="centerY" id="vMH-aP-3Ip"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="completedLabel" destination="C0h-Uo-LEH" id="67c-Kr-Gca"/>
+                                    <outlet property="outOfLabel" destination="Qvl-Qk-MQ1" id="Vqp-xB-Byp"/>
+                                    <outlet property="topicLabel" destination="C3f-yG-Dg2" id="yAT-AY-4Gb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

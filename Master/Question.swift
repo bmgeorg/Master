@@ -10,10 +10,16 @@ import Foundation
 import Realm
 
 class Question: RLMObject {
-    dynamic var difficulty = "DEFAULT_DIFFICULTY"
-    dynamic var title = "DEFAULT_TITLE"
-    dynamic var question = "DEFAULT_QUESTION"
+    dynamic var prompt = "DEFAULT_QUESTION"
     dynamic var answer = "DEFAULT_ANSWER"
     dynamic var explanation = "DEFAULT_EXPLANATION"
+    dynamic var difficulty: Int = 0 //0-10 inclusive
     dynamic var solved = false
+    
+    var topic: Topic {
+        let linked = linkingObjectsOfClass(Topic.className(), forProperty: "questions")
+        assert(linked.count > 0, "Bad data. Question has no backlinked topic.")
+        assert(linked.count == 1, "Bad data. Question has more than one backlinked topic.")
+        return linked[0] as Topic
+    }
 }
