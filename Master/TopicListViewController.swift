@@ -16,6 +16,8 @@ class TopicListViewController: UITableViewController {
     override func viewDidLoad() {
         QuestionBank.populateQuestions()
         topics = Topic.allObjects().sortedResultsUsingProperty("order", ascending: true)
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
