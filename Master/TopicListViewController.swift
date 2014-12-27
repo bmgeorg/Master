@@ -39,13 +39,11 @@ class TopicListViewController: UITableViewController {
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as TopicCell
         cell.accessoryType = UITableViewCellAccessoryType.None
-        cell.topicLabel.highlighted = false
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as TopicCell
         cell.accessoryType = UITableViewCellAccessoryType.Checkmark
-        cell.topicLabel.highlighted = true
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

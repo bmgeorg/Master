@@ -90,6 +90,7 @@
                                             <color key="highlightedColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
+                                    <color key="tintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="xFV-mZ-iSD" firstAttribute="top" secondItem="Hby-oM-E17" secondAttribute="topMargin" id="5dK-7R-mIj"/>
                                         <constraint firstItem="xFV-mZ-iSD" firstAttribute="leading" secondItem="Hby-oM-E17" secondAttribute="leadingMargin" id="9cZ-d3-yvV"/>
@@ -120,7 +121,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5u-Zj-zH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2068" y="-379"/>
+            <point key="canvasLocation" x="2068" y="-385"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ff9-Nx-dG3">
