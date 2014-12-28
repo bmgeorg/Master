@@ -9,9 +9,10 @@
 import UIKit
 import Realm
 
-class TopicListViewController: UITableViewController {
+class TopicListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var topics: RLMResults!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         QuestionBank.populateQuestions()
@@ -19,15 +20,15 @@ class TopicListViewController: UITableViewController {
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
     }
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Int(topics.count)
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TopicCell", forIndexPath: indexPath) as TopicCell
         let topic = topics[UInt(indexPath.row)] as Topic
         cell.topicLabel.text = topic.topic
@@ -36,12 +37,12 @@ class TopicListViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as TopicCell
         cell.accessoryType = UITableViewCellAccessoryType.None
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as TopicCell
         cell.accessoryType = UITableViewCellAccessoryType.Checkmark
     }
