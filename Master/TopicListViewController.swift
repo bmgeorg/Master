@@ -50,8 +50,24 @@ class TopicListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "startTest") {
+            var chosenTopics = [Topic]()
+            let indexPaths = self.tableView.indexPathsForSelectedRows()
+            if let paths = indexPaths {
+                for object in paths {
+                    let path = object as NSIndexPath
+                    chosenTopics.append(topics[UInt(path.row)] as Topic)
+                }
+            } else {
+                //choose all topics
+                for object in topics {
+                    let topic = object as Topic
+                    chosenTopics.append(topic)
+                }
+            }
+            let test = Test(topics: chosenTopics)
             let dest = segue.destinationViewController as QuestionViewController
-            dest.question = Question.allObjects()[0] as Question
+            dest.test = test
+            dest.question = test.nextQuestion()
         }
     }
 }

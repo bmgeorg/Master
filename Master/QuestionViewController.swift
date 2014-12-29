@@ -18,20 +18,40 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRec
     @IBOutlet weak var scrollView: UIScrollView!
     
     var question: Question!
+    var test: Test!
 
     @IBAction func checkAnswer() {
-        if(answerTextView.text.uppercaseString == question.answer.uppercaseString) {
+        if(test.submitAnswer(answerTextView.text)) {
             feedbackLabel.text = "Right!"
             feedbackLabel.textColor = UIColor.greenColor()
-            RLMRealm.defaultRealm().beginWriteTransaction()
-            question.solved = true
-            RLMRealm.defaultRealm().commitWriteTransaction()
         } else {
             feedbackLabel.text = "Wrong!"
             feedbackLabel.textColor = UIColor.redColor()
         }
         explanationLabel.text = question.explanation
     }
+    
+    
+    @IBAction func showNextView() {
+        if test.testFinished() {
+            performSegueWithIdentifier("showTestResults", sender: self)
+        } else {
+            performSegueWithIdentifier("showNextQuestion", sender: self)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showTestResults" {
+            
+        } else if segue.identifier == "showNextQuestion" {
+            let dest = segue.destinationViewController as QuestionViewController
+            dest.test = test
+            dest.question = test.nextQuestion()
+        } else {
+            assertionFailure("Unrecognized segue identifier from QuestionViewController.")
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

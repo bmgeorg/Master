@@ -15,7 +15,9 @@ class Test {
     var solved: [Bool]
     var questionIndex = -1
     
-    init(topics: [Topic], numQuestions: Int) {
+    let NUM_QUESTIONS = 2
+    
+    init(topics: [Topic]) {
         self.topics = topics
         
         var allQuestions = [Question]()
@@ -24,12 +26,16 @@ class Test {
                 allQuestions.append(question as Question)
             }
         }
-        assert(numQuestions <= allQuestions.count, "Not enough questions in Test.topics")
-        
         questionList = [Question]()
+        
+        //Create solved array
+        solved = [Bool](count: NUM_QUESTIONS, repeatedValue: false)
+        
+        assert(NUM_QUESTIONS <= allQuestions.count, "Not enough questions in Test.topics")
+        
         //Randomly select numQuestions from allQuestions to fill questionList
-        for i in 0..<numQuestions {
-            let idx = i + Int(arc4random())%(numQuestions-i)
+        for i in 0..<NUM_QUESTIONS {
+            let idx = i + Int(arc4random())%(NUM_QUESTIONS-i)
             
             //swap questions at i and idx
             let temp = allQuestions[i]
@@ -38,9 +44,6 @@ class Test {
             
             questionList.append(allQuestions[i])
         }
-        
-        //Create solved array
-        solved = [Bool](count: numQuestions, repeatedValue: false)
     }
     
     func testFinished() -> Bool {
@@ -69,6 +72,6 @@ class Test {
     
     func createTestReport() -> TestReport {
         assert(testFinished(), "createTestReport() called before test is finished.")
-        return TestReport(questions: questions, solved: solved)
+        return TestReport(questions: questionList, solved: solved)
     }
 }
