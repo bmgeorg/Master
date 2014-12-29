@@ -9,22 +9,22 @@
 import UIKit
 import Realm
 
-class QuestionViewController: UIViewController, UITextFieldDelegate, UIGestureRecognizerDelegate {
-    /*@IBOutlet weak var questionTitle: UINavigationItem!
+class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var feedbackLabel: UILabel!
-    @IBOutlet weak var answerField: UITextField!
+    @IBOutlet weak var answerTextView: ResizingTextView!
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
-
+    
     var question: Question!
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     let BOTTOM_MARGIN: CGFloat = 8
-
+    
     @IBAction func checkAnswer() {
-        if(answerField.text.uppercaseString == question.answer.uppercaseString) {
-            feedbackLabel.text = "Correct!"
+        if(answerTextView.text.uppercaseString == question.answer.uppercaseString) {
+            feedbackLabel.text = "Right!"
             feedbackLabel.textColor = UIColor.greenColor()
             RLMRealm.defaultRealm().beginWriteTransaction()
             question.solved = true
@@ -40,12 +40,8 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, UIGestureRe
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
-        answerField.delegate = self
-        
-        questionTitle.title = question.title
-        questionLabel.text = question.question
+        answerTextView.delegate = self
         addDismissKeyboardRecognizer()
-        setDefaultBottomInsets()
     }
     
     deinit {
@@ -54,22 +50,26 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     
     // Mark: Keyboard Handling
     
-    internal func setDefaultBottomInsets() {
-        scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, BOTTOM_MARGIN, 0.0);
-        scrollView.scrollIndicatorInsets = UIEdgeInsetsZero
-    }
-    
     func keyboardWillShow(notification: NSNotification) {
+        println("Showing keyboard")
         let info = notification.userInfo!
-        let keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue()
-        scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardFrame.height+BOTTOM_MARGIN, 0.0);
-        scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardFrame.height, 0.0);
+        let keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
+        var contentInsets = scrollView.contentInset
+        contentInsets.bottom = keyboardFrame.height
+        scrollView.scrollIndicatorInsets = contentInsets
+        scrollView.contentInset = contentInsets
         
-        self.scrollView.scrollRectToVisible(answerField.frame, animated: true)
+        let bottomOffsetY = scrollView.contentSize.height - (scrollView.bounds.size.height-keyboardFrame.height)
+        if(bottomOffsetY > 0) {
+            scrollView.setContentOffset(CGPointMake(0, bottomOffsetY), animated: true)
+        }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        setDefaultBottomInsets()
+        var contentInsets = scrollView.contentInset
+        contentInsets.bottom = 0
+        scrollView.scrollIndicatorInsets = contentInsets
+        scrollView.contentInset = contentInsets
     }
     
     //close keyboard on return press
@@ -92,6 +92,6 @@ class QuestionViewController: UIViewController, UITextFieldDelegate, UIGestureRe
     }
     
     internal func dismissKeyboard() {
-        answerField.resignFirstResponder()
-    }*/
+        answerTextView.resignFirstResponder()
+    }
 }

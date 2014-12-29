@@ -13,6 +13,7 @@ class TopicListViewController: UIViewController, UITableViewDelegate, UITableVie
     
     var topics: RLMResults!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var chooseTopicsButton: UIButton!
     
     override func viewDidLoad() {
         QuestionBank.populateQuestions()
@@ -48,9 +49,9 @@ class TopicListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "") {
-        } else {
-            assert(false, "Unrecognized segue identifier from ArchiveViewController")
+        if(segue.identifier == "startTest") {
+            let dest = segue.destinationViewController as QuestionViewController
+            dest.question = Question.allObjects()[0] as Question
         }
     }
 }
