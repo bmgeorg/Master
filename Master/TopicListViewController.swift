@@ -21,6 +21,11 @@ class TopicListViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        updateChooseTopicsButton()
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -41,11 +46,28 @@ class TopicListViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as TopicCell
         cell.accessoryType = UITableViewCellAccessoryType.None
+        updateChooseTopicsButton()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as TopicCell
         cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        updateChooseTopicsButton()
+    }
+    
+    internal func updateChooseTopicsButton() {
+        var text = ""
+        if let chosenIndexPaths = tableView.indexPathsForSelectedRows() {
+            text = "\((chosenIndexPaths as [NSIndexPath]).count) selected"
+        } else {
+            text = "Choose Random Topics"
+        }
+        UIView.performWithoutAnimation({
+            self.chooseTopicsButton.setTitle(text, forState: .Normal)
+            self.chooseTopicsButton.setTitle(text, forState: .Disabled)
+            self.chooseTopicsButton.setTitle(text, forState: .Selected)
+            self.chooseTopicsButton.setTitle(text, forState: .Highlighted)
+        })
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

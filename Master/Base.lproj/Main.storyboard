@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMQ-Kp-WyB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMQ-Kp-WyB" customClass="HighlightableButton" customModule="Master" customModuleProvider="target">
                                 <rect key="frame" x="16" y="278" width="568" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -27,7 +27,6 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Create Test">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -305,23 +304,23 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xR-X5-Tjs" userLabel="Bottom ToolBar">
                                 <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPe-AF-2bG">
-                                        <rect key="frame" x="195" y="7" width="211" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPe-AF-2bG" customClass="HighlightableButton" customModule="Master" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Choose Random Topics">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Choose Random Topics"/>
                                         <connections>
                                             <segue destination="2K0-8e-Oj9" kind="show" identifier="startTest" id="aW6-d1-MWE"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="28y-5W-NMW"/>
-                                    <constraint firstAttribute="centerY" secondItem="YPe-AF-2bG" secondAttribute="centerY" id="ZpG-S6-Wpn"/>
-                                    <constraint firstAttribute="centerX" secondItem="YPe-AF-2bG" secondAttribute="centerX" id="p8Y-ti-is6"/>
+                                    <constraint firstItem="YPe-AF-2bG" firstAttribute="leading" secondItem="1xR-X5-Tjs" secondAttribute="leading" id="cSM-9W-w7J"/>
+                                    <constraint firstAttribute="bottom" secondItem="YPe-AF-2bG" secondAttribute="bottom" id="fIT-sp-Uy3"/>
+                                    <constraint firstItem="YPe-AF-2bG" firstAttribute="top" secondItem="1xR-X5-Tjs" secondAttribute="top" id="fpv-Ch-kHt"/>
+                                    <constraint firstAttribute="trailing" secondItem="YPe-AF-2bG" secondAttribute="trailing" id="h9Y-tS-NDh"/>
                                 </constraints>
                             </view>
                         </subviews>
