@@ -9,23 +9,50 @@
 import UIKit
 
 class ResizingTextView: UITextView {
-    var heightConstraint: NSLayoutConstraint!
-    
-    override func layoutSubviews() {
-        if(heightConstraint == nil) {
-            heightConstraint = findHeightConstraint()
-        }
-        let sizeThatFits = self.sizeThatFits(CGSizeMake(self.frame.width, CGFloat(MAXFLOAT)))
-        heightConstraint.constant = sizeThatFits.height
-    }
-    
-    internal func findHeightConstraint() -> NSLayoutConstraint! {
-        for constraint in constraints() {
+    lazy var heightConstraint: NSLayoutConstraint! = {
+        for constraint in self.constraints() {
             if constraint.firstAttribute == NSLayoutAttribute.Height {
                 return constraint as NSLayoutConstraint
             }
         }
         assertionFailure("Could not find height constraint on ResizingTextView")
         return nil
+    }()
+    
+    internal func listenToTextChanges() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("textDidChange:"), name:UITextViewTextDidChangeNotification, object: self);
+    }
+    
+    override init() {
+        super.init()
+        listenToTextChanges()
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        listenToTextChanges()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        listenToTextChanges()
+    }
+    
+    override init(frame: CGRect, textContainer: NSTextContainer?) {
+        super.init(frame: frame, textContainer: textContainer)
+        listenToTextChanges()
+    }
+    
+    override func layoutSubviews() {
+        let sizeThatFits = self.sizeThatFits(CGSizeMake(self.frame.width, CGFloat(MAXFLOAT)))
+        heightConstraint.constant = sizeThatFits.height
+    }
+    
+    func textDidChange(notification: NSNotification) {
+        layoutSubviews()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self);
     }
 }

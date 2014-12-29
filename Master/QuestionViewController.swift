@@ -44,11 +44,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRec
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self);
     }
-    
-    func textViewDidChange(textView: UITextView) {
-        answerTextView.layoutSubviews()
-    }
-    
+
     // Mark: Keyboard Handling
     
     func keyboardWillShow(notification: NSNotification) {
