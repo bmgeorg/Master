@@ -18,10 +18,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRec
     @IBOutlet weak var scrollView: UIScrollView!
     
     var question: Question!
-    
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    let BOTTOM_MARGIN: CGFloat = 8
-    
+
     @IBAction func checkAnswer() {
         if(answerTextView.text.uppercaseString == question.answer.uppercaseString) {
             feedbackLabel.text = "Right!"
@@ -48,10 +45,13 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRec
         NSNotificationCenter.defaultCenter().removeObserver(self);
     }
     
+    func textViewDidChange(textView: UITextView) {
+        answerTextView.layoutSubviews()
+    }
+    
     // Mark: Keyboard Handling
     
     func keyboardWillShow(notification: NSNotification) {
-        println("Showing keyboard")
         let info = notification.userInfo!
         let keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
         var contentInsets = scrollView.contentInset
