@@ -16,11 +16,18 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRec
     @IBOutlet weak var answerTextView: ResizingTextView!
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var explanationView: UIView!
+    @IBOutlet weak var explanationHeightConstraint: NSLayoutConstraint!
     
     var question: Question!
     var test: Test!
-
+    
+    let UNBOUNDED_HEIGHT: CGFloat = 100000000
+    
     @IBAction func checkAnswer() {
+        enterButton.enabled = false
+        answerTextView.editable = false
+        answerTextView.textColor = UIColor.grayColor()
         if(test.submitAnswer(answerTextView.text)) {
             feedbackLabel.text = "Right!"
             feedbackLabel.textColor = UIColor.greenColor()
@@ -29,6 +36,13 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRec
             feedbackLabel.textColor = UIColor.redColor()
         }
         explanationLabel.text = question.explanation
+        self.view.layoutIfNeeded()
+        self.explanationHeightConstraint.constant = self.UNBOUNDED_HEIGHT
+        UIView.animateWithDuration(0.5, animations: {
+            self.explanationView.alpha = 1
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+        
     }
     
     
@@ -64,7 +78,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRec
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self);
     }
-
+    
     // Mark: Keyboard Handling
     
     func keyboardWillShow(notification: NSNotification) {

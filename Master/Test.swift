@@ -63,9 +63,11 @@ class Test {
         if currentQuestion.answer.uppercaseString == answer.uppercaseString {
             currentQuestion.solved = true
             solved[questionIndex] = true
+            RLMRealm.defaultRealm().commitWriteTransaction()
             return true
         } else {
             solved[questionIndex] = false
+            RLMRealm.defaultRealm().commitWriteTransaction()
             return false
         }
     }

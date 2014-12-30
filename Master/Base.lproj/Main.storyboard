@@ -96,8 +96,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="vyn-3o-zOf" secondAttribute="trailing" id="yO8-22-0di"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYj-Df-mTQ" userLabel="Explantion View">
-                                        <rect key="frame" x="8" y="80" width="584" height="102"/>
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYj-Df-mTQ" userLabel="Explantion View">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8J-WA-eZn" userLabel="Feedback">
                                                 <rect key="frame" x="8" y="8" width="568" height="20"/>
@@ -106,13 +105,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explanation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erA-Ec-vr2">
-                                                <rect key="frame" x="8" y="36" width="568" height="20"/>
+                                                <rect key="frame" x="8" y="-66" width="568" height="20"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Siy-RN-fY4">
-                                                <rect key="frame" x="8" y="64" width="98" height="30"/>
+                                                <rect key="frame" x="8" y="-38" width="98" height="30"/>
                                                 <state key="normal" title="Next Question">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -120,9 +119,9 @@
                                                     <action selector="showNextView" destination="2K0-8e-Oj9" eventType="touchUpInside" id="Kns-4o-6iH"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jt8-uh-xWF">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jt8-uh-xWF" userLabel="Outlet to Segue">
                                                 <rect key="frame" x="114" y="64" width="46" height="30"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title=" ">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
@@ -138,13 +137,14 @@
                                             <constraint firstItem="T8J-WA-eZn" firstAttribute="trailing" secondItem="uYj-Df-mTQ" secondAttribute="trailingMargin" id="Y7d-nE-Psg"/>
                                             <constraint firstItem="T8J-WA-eZn" firstAttribute="top" secondItem="uYj-Df-mTQ" secondAttribute="topMargin" id="dy2-fG-Ioh"/>
                                             <constraint firstItem="T8J-WA-eZn" firstAttribute="trailing" secondItem="erA-Ec-vr2" secondAttribute="trailing" id="mrA-0c-ixo"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" id="msb-yC-5Dg"/>
                                             <constraint firstItem="T8J-WA-eZn" firstAttribute="leading" secondItem="uYj-Df-mTQ" secondAttribute="leadingMargin" id="rHD-NT-gAV"/>
-                                            <constraint firstItem="erA-Ec-vr2" firstAttribute="top" secondItem="T8J-WA-eZn" secondAttribute="bottom" constant="8" id="w1h-ow-z1T"/>
+                                            <constraint firstItem="erA-Ec-vr2" firstAttribute="top" secondItem="T8J-WA-eZn" secondAttribute="bottom" priority="750" constant="8" id="w1h-ow-z1T"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="Siy-RN-fY4" secondAttribute="bottom" id="xMD-By-Fme"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW6-NV-PZ0">
-                                        <rect key="frame" x="555" y="190" width="37" height="30"/>
+                                        <rect key="frame" x="555" y="88" width="37" height="30"/>
                                         <state key="normal" title="Enter">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -153,7 +153,7 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pec" translatesAutoresizingMaskIntoConstraints="NO" id="Y8A-Ec-SbD" userLabel="Answer View" customClass="ResizingTextView" customModule="Master" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="190" width="539" height="142"/>
+                                        <rect key="frame" x="8" y="88" width="539" height="142"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="142" id="IWg-Zq-2ru"/>
@@ -191,7 +191,9 @@
                     <connections>
                         <outlet property="answerTextView" destination="Y8A-Ec-SbD" id="vZ0-rc-EJu"/>
                         <outlet property="enterButton" destination="DW6-NV-PZ0" id="Kik-o7-2dv"/>
+                        <outlet property="explanationHeightConstraint" destination="msb-yC-5Dg" id="rKr-ym-AHH"/>
                         <outlet property="explanationLabel" destination="erA-Ec-vr2" id="ITO-HU-gbC"/>
+                        <outlet property="explanationView" destination="uYj-Df-mTQ" id="q6x-cd-VdW"/>
                         <outlet property="feedbackLabel" destination="T8J-WA-eZn" id="ckG-6j-Adu"/>
                         <outlet property="questionLabel" destination="MPr-kz-lMN" id="rWD-89-Gfu"/>
                         <outlet property="scrollView" destination="8uN-wE-gIt" id="n1f-zi-A7u"/>
@@ -200,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWF-j7-Woe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2912" y="-368"/>
+            <point key="canvasLocation" x="2906" y="-379"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Yzr-80-WUM">
