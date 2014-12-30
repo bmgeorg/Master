@@ -46,18 +46,19 @@ class Test {
         }
     }
     
-    func testFinished() -> Bool {
-        return questionIndex == questionList.count - 1
+    func hasNextQuestion() -> Bool {
+        return questionIndex+1 < NUM_QUESTIONS
     }
     
+    //returns nil if test is finished
     func nextQuestion() -> Question {
-        assert(!testFinished(), "nextQuestion() called when test is finished.")
+        assert(hasNextQuestion(), "nextQuestion() called and there are no more questions.")
         return questionList[++questionIndex]
     }
     
     func submitAnswer(answer: String) -> Bool {
         assert(questionIndex >= 0, "submitAnswer(...) called before test is started.")
-        assert(!testFinished(), "submitAnswer(...) called after test is finished.")
+        assert(questionIndex < NUM_QUESTIONS, "submitAnswer(...) called after test is finished.")
         let currentQuestion = questionList[questionIndex]
         RLMRealm.defaultRealm().beginWriteTransaction()
         if currentQuestion.answer.uppercaseString == answer.uppercaseString {
@@ -72,8 +73,8 @@ class Test {
         }
     }
     
+    
     func createTestReport() -> TestReport {
-        assert(testFinished(), "createTestReport() called before test is finished.")
         return TestReport(questions: questionList, solved: solved)
     }
 }

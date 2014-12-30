@@ -47,10 +47,10 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRec
     
     
     @IBAction func showNextView() {
-        if test.testFinished() {
-            performSegueWithIdentifier("showTestResults", sender: self)
-        } else {
+        if test.hasNextQuestion() {
             performSegueWithIdentifier("showNextQuestion", sender: self)
+        } else {
+            performSegueWithIdentifier("showTestResults", sender: self)
         }
     }
     
