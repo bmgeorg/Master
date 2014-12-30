@@ -17,17 +17,19 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRec
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var explanationView: UIView!
+    @IBOutlet weak var explanationViewBottomMargin: NSLayoutConstraint!
     @IBOutlet weak var explanationHeightConstraint: NSLayoutConstraint!
     
     var question: Question!
     var test: Test!
     
     let UNBOUNDED_HEIGHT: CGFloat = 100000000
-    
+
     @IBAction func checkAnswer() {
         enterButton.enabled = false
         answerTextView.editable = false
         answerTextView.textColor = UIColor.grayColor()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Bordered, target: self, action: "showNextView")
         if(test.submitAnswer(answerTextView.text)) {
             feedbackLabel.text = "Right!"
             feedbackLabel.textColor = UIColor.greenColor()
@@ -36,15 +38,15 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRec
             feedbackLabel.textColor = UIColor.redColor()
         }
         explanationLabel.text = question.explanation
-        self.view.layoutIfNeeded()
-        self.explanationHeightConstraint.constant = self.UNBOUNDED_HEIGHT
+        view.layoutIfNeeded()
+        explanationHeightConstraint.constant = self.UNBOUNDED_HEIGHT
+        explanationViewBottomMargin.constant = 8
         UIView.animateWithDuration(0.5, animations: {
             self.explanationView.alpha = 1
             self.view.layoutIfNeeded()
             }, completion: nil)
         
     }
-    
     
     @IBAction func showNextView() {
         if test.hasNextQuestion() {
@@ -72,6 +74,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRec
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
         answerTextView.delegate = self
+        self.navigationItem.hidesBackButton = true
         addDismissKeyboardRecognizer()
     }
     

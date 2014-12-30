@@ -105,22 +105,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explanation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erA-Ec-vr2">
-                                                <rect key="frame" x="8" y="-66" width="568" height="20"/>
+                                                <rect key="frame" x="8" y="-28" width="568" height="20"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Siy-RN-fY4">
-                                                <rect key="frame" x="8" y="-38" width="98" height="30"/>
-                                                <state key="normal" title="Next Question">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="showNextView" destination="2K0-8e-Oj9" eventType="touchUpInside" id="Kns-4o-6iH"/>
-                                                </connections>
-                                            </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jt8-uh-xWF" userLabel="Outlet to Segue">
-                                                <rect key="frame" x="114" y="64" width="46" height="30"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jt8-uh-xWF" userLabel="Outlet to Self Segue">
+                                                <rect key="frame" x="8" y="8" width="46" height="30"/>
                                                 <state key="normal" title=" ">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -131,21 +122,19 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Siy-RN-fY4" firstAttribute="leading" secondItem="uYj-Df-mTQ" secondAttribute="leadingMargin" id="GM4-A5-Sme"/>
                                             <constraint firstItem="T8J-WA-eZn" firstAttribute="leading" secondItem="erA-Ec-vr2" secondAttribute="leading" id="VYu-I5-kjl"/>
-                                            <constraint firstItem="Siy-RN-fY4" firstAttribute="top" secondItem="erA-Ec-vr2" secondAttribute="bottom" constant="8" id="W9W-DZ-wIO"/>
                                             <constraint firstItem="T8J-WA-eZn" firstAttribute="trailing" secondItem="uYj-Df-mTQ" secondAttribute="trailingMargin" id="Y7d-nE-Psg"/>
                                             <constraint firstItem="T8J-WA-eZn" firstAttribute="top" secondItem="uYj-Df-mTQ" secondAttribute="topMargin" id="dy2-fG-Ioh"/>
                                             <constraint firstItem="T8J-WA-eZn" firstAttribute="trailing" secondItem="erA-Ec-vr2" secondAttribute="trailing" id="mrA-0c-ixo"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" id="msb-yC-5Dg"/>
                                             <constraint firstItem="T8J-WA-eZn" firstAttribute="leading" secondItem="uYj-Df-mTQ" secondAttribute="leadingMargin" id="rHD-NT-gAV"/>
                                             <constraint firstItem="erA-Ec-vr2" firstAttribute="top" secondItem="T8J-WA-eZn" secondAttribute="bottom" priority="750" constant="8" id="w1h-ow-z1T"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="Siy-RN-fY4" secondAttribute="bottom" id="xMD-By-Fme"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="erA-Ec-vr2" secondAttribute="bottom" id="xKl-pH-itj"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW6-NV-PZ0">
-                                        <rect key="frame" x="555" y="88" width="37" height="30"/>
-                                        <state key="normal" title="Enter">
+                                        <rect key="frame" x="543" y="80" width="49" height="30"/>
+                                        <state key="normal" title="Submit">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -153,7 +142,7 @@
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pec" translatesAutoresizingMaskIntoConstraints="NO" id="Y8A-Ec-SbD" userLabel="Answer View" customClass="ResizingTextView" customModule="Master" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="88" width="539" height="142"/>
+                                        <rect key="frame" x="8" y="80" width="527" height="142"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="142" id="IWg-Zq-2ru"/>
@@ -166,7 +155,7 @@
                                     <constraint firstItem="uYj-Df-mTQ" firstAttribute="trailing" secondItem="8uN-wE-gIt" secondAttribute="trailingMargin" id="1tb-0y-sfY"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="Y8A-Ec-SbD" secondAttribute="bottom" id="8gg-1t-QbT"/>
                                     <constraint firstItem="Y8A-Ec-SbD" firstAttribute="leading" secondItem="8uN-wE-gIt" secondAttribute="leadingMargin" id="A0L-6p-FLo"/>
-                                    <constraint firstItem="uYj-Df-mTQ" firstAttribute="top" secondItem="ila-oI-0IR" secondAttribute="bottom" constant="8" id="EBq-QT-l9S"/>
+                                    <constraint firstItem="uYj-Df-mTQ" firstAttribute="top" secondItem="ila-oI-0IR" secondAttribute="bottom" id="EBq-QT-l9S"/>
                                     <constraint firstItem="DW6-NV-PZ0" firstAttribute="top" secondItem="Y8A-Ec-SbD" secondAttribute="top" id="Ffx-eI-Ye0"/>
                                     <constraint firstItem="Y8A-Ec-SbD" firstAttribute="top" secondItem="uYj-Df-mTQ" secondAttribute="bottom" constant="8" id="Jii-2j-y93"/>
                                     <constraint firstItem="uYj-Df-mTQ" firstAttribute="leading" secondItem="8uN-wE-gIt" secondAttribute="leadingMargin" id="Nqa-6w-rfM"/>
@@ -187,13 +176,20 @@
                             <constraint firstAttribute="width" secondItem="ila-oI-0IR" secondAttribute="width" constant="16" id="yDd-Bl-K0y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Test" id="dzO-c3-KFu"/>
+                    <navigationItem key="navigationItem" title="Test" id="dzO-c3-KFu">
+                        <barButtonItem key="rightBarButtonItem" title="Finish Early" id="6IH-Zw-eIi">
+                            <connections>
+                                <action selector="showNextView" destination="2K0-8e-Oj9" id="8bC-3S-IF3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="answerTextView" destination="Y8A-Ec-SbD" id="vZ0-rc-EJu"/>
                         <outlet property="enterButton" destination="DW6-NV-PZ0" id="Kik-o7-2dv"/>
                         <outlet property="explanationHeightConstraint" destination="msb-yC-5Dg" id="rKr-ym-AHH"/>
                         <outlet property="explanationLabel" destination="erA-Ec-vr2" id="ITO-HU-gbC"/>
                         <outlet property="explanationView" destination="uYj-Df-mTQ" id="q6x-cd-VdW"/>
+                        <outlet property="explanationViewBottomMargin" destination="EBq-QT-l9S" id="cSd-9e-isL"/>
                         <outlet property="feedbackLabel" destination="T8J-WA-eZn" id="ckG-6j-Adu"/>
                         <outlet property="questionLabel" destination="MPr-kz-lMN" id="rWD-89-Gfu"/>
                         <outlet property="scrollView" destination="8uN-wE-gIt" id="n1f-zi-A7u"/>
