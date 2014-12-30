@@ -9,27 +9,35 @@
 import UIKit
 import Realm
 
-class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
+class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHandlingScrollViewDelegate {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var answerTextView: ResizingTextView!
     @IBOutlet weak var enterButton: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var explanationView: UIView!
     @IBOutlet weak var explanationViewBottomMargin: NSLayoutConstraint!
     @IBOutlet weak var explanationHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: KeyboardHandlingScrollView!
+    var activeField: UIView?
     
     var question: Question!
     var test: Test!
     
     let UNBOUNDED_HEIGHT: CGFloat = 100000000
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
+        scrollView.keyboardDelegate = self
+    }
+    
     @IBAction func checkAnswer() {
         enterButton.enabled = false
         answerTextView.editable = false
         answerTextView.textColor = UIColor.grayColor()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Bordered, target: self, action: "showNextView")
+        
         if(test.submitAnswer(answerTextView.text)) {
             feedbackLabel.text = "Right!"
             feedbackLabel.textColor = UIColor.greenColor()
@@ -38,6 +46,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRec
             feedbackLabel.textColor = UIColor.redColor()
         }
         explanationLabel.text = question.explanation
+        
         view.layoutIfNeeded()
         explanationHeightConstraint.constant = self.UNBOUNDED_HEIGHT
         explanationViewBottomMargin.constant = 8
@@ -68,63 +77,25 @@ class QuestionViewController: UIViewController, UITextViewDelegate, UIGestureRec
         }
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
-        answerTextView.delegate = self
-        self.navigationItem.hidesBackButton = true
-        addDismissKeyboardRecognizer()
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        activeField = textView
+        return true
     }
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self);
+    func textViewDidEndEditing(textView: UITextView) {
+        activeField = nil
     }
     
-    // Mark: Keyboard Handling
-    
-    func keyboardWillShow(notification: NSNotification) {
-        let info = notification.userInfo!
-        let keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey] as NSValue).CGRectValue().size
-        var contentInsets = scrollView.contentInset
-        contentInsets.bottom = keyboardFrame.height
-        scrollView.scrollIndicatorInsets = contentInsets
-        scrollView.contentInset = contentInsets
-        
-        let bottomOffsetY = scrollView.contentSize.height - (scrollView.bounds.size.height-keyboardFrame.height)
-        if(bottomOffsetY > 0) {
-            scrollView.setContentOffset(CGPointMake(0, bottomOffsetY), animated: true)
-        }
+    func getActiveField() -> UIView? {
+        return activeField
     }
     
-    func keyboardWillHide(notification: NSNotification) {
-        var contentInsets = scrollView.contentInset
-        contentInsets.bottom = 0
-        scrollView.scrollIndicatorInsets = contentInsets
-        scrollView.contentInset = contentInsets
-    }
-    
-    //close keyboard on return press
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        dismissKeyboard()
-        return false
-    }
-    
-    //close keyboard tap outside of keyboard, except when tap is on enterButton (see gestureRecognizer: shouldReceiveTouch: method)
-    internal func addDismissKeyboardRecognizer() {
-        let tapDismiss = UITapGestureRecognizer(target: self, action:"dismissKeyboard")
-        tapDismiss.cancelsTouchesInView = false
-        tapDismiss.delegate = self
-        self.view.addGestureRecognizer(tapDismiss)
-    }
-    
-    //do not close keyboard when tap is on enter button
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+    func shouldDismissKeyboardForTap(touch: UITouch) -> Bool {
         return !touch.view.isDescendantOfView(enterButton)
     }
     
-    internal func dismissKeyboard() {
-        answerTextView.resignFirstResponder()
+    func marginAroundActiveField() -> CGFloat {
+        return 8
     }
+    
 }

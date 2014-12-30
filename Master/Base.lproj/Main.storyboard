@@ -66,10 +66,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="8uN-wE-gIt">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="8uN-wE-gIt" customClass="KeyboardHandlingScrollView" customModule="Master" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ila-oI-0IR" userLabel="Question View">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ila-oI-0IR" userLabel="Question View">
                                         <rect key="frame" x="8" y="8" width="584" height="64"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyn-3o-zOf">
@@ -78,8 +78,9 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPr-kz-lMN" userLabel="Question">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPr-kz-lMN" userLabel="Question">
                                                 <rect key="frame" x="8" y="36" width="568" height="20"/>
+                                                <mutableString key="text">Question Lorem ipsum dolque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, t ipsum, tristique et mauris nec, dapibus pulvinar orci. Suspendisse ac ligula molestie, fringilla metus eu, ultrices lectus. Nullam molestie lectus in libero tincidunt convallis. Etiam quis lacus in dui scelerisque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, metus eu euismod aliquet, leo nibh elementum est, vel placerat eros enim non lectus. Phasellus ut viverra lectus, a elementum mi. Nulla eu ex augue. Question Lorem ipsum dolque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, t ipsum, tristique et mauris nec, dapibus pulvinar orci. Suspendisse ac ligula molestie, fringilla metus eu, ultrices lectus. Nullam molestie lectus in libero tincidunt convallis. Etiam quis lacus in dui scelerisque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, metus eu euismod aliquet, leo nibh elementum est, vel placerat eros enim non lectus. Phasellus ut viverra lectus, a elementum mi. Nulla eu ex augue. Question Lorem ipsum dolque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, t ipsum, tristique et mauris nec, dapibus pulvinar orci. Suspendisse ac ligula molestie, fringilla metus eu, ultrices lectus. Nullam molestie lectus in libero tincidunt convallis. Etiam quis lacus in dui scelerisque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, metus eu euismod aliquet, leo nibh elementum est, vel placerat eros enim non lectus. Phasellus ut viverra lectus, a elementum mi. Nulla eu ex augue. Question Lorem ipsum dolque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, t ipsum, tristique et mauris nec, dapibus pulvinar orci. Suspendisse ac ligula molestie, fringilla metus eu, ultrices lectus. Nullam molestie lectus in libero tincidunt convallis. Etiam quis lacus in dui scelerisque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, metus eu euismod aliquet, leo nibh elementum est, vel placerat eros enim non lectus. Phasellus ut viverra lectus, a elementum mi. Nulla eu ex augue. </mutableString>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -96,7 +97,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="vyn-3o-zOf" secondAttribute="trailing" id="yO8-22-0di"/>
                                         </constraints>
                                     </view>
-                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYj-Df-mTQ" userLabel="Explantion View">
+                                    <view alpha="0.0" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uYj-Df-mTQ" userLabel="Explantion View">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8J-WA-eZn" userLabel="Feedback">
                                                 <rect key="frame" x="8" y="8" width="568" height="20"/>
@@ -132,7 +133,7 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="erA-Ec-vr2" secondAttribute="bottom" id="xKl-pH-itj"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW6-NV-PZ0">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW6-NV-PZ0">
                                         <rect key="frame" x="543" y="80" width="49" height="30"/>
                                         <state key="normal" title="Submit">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,7 +142,7 @@
                                             <action selector="checkAnswer" destination="2K0-8e-Oj9" eventType="touchUpInside" id="xrR-aZ-Zk5"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pec" translatesAutoresizingMaskIntoConstraints="NO" id="Y8A-Ec-SbD" userLabel="Answer View" customClass="ResizingTextView" customModule="Master" customModuleProvider="target">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8A-Ec-SbD" userLabel="Answer View" customClass="ResizingTextView" customModule="Master" customModuleProvider="target">
                                         <rect key="frame" x="8" y="80" width="527" height="142"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -149,21 +150,33 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="2K0-8e-Oj9" id="WZT-Ll-OeP"/>
+                                        </connections>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehD-n7-i92">
+                                        <rect key="frame" x="8" y="230" width="584" height="227"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="uYj-Df-mTQ" firstAttribute="trailing" secondItem="8uN-wE-gIt" secondAttribute="trailingMargin" id="1tb-0y-sfY"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="Y8A-Ec-SbD" secondAttribute="bottom" id="8gg-1t-QbT"/>
                                     <constraint firstItem="Y8A-Ec-SbD" firstAttribute="leading" secondItem="8uN-wE-gIt" secondAttribute="leadingMargin" id="A0L-6p-FLo"/>
                                     <constraint firstItem="uYj-Df-mTQ" firstAttribute="top" secondItem="ila-oI-0IR" secondAttribute="bottom" id="EBq-QT-l9S"/>
+                                    <constraint firstItem="ehD-n7-i92" firstAttribute="trailing" secondItem="8uN-wE-gIt" secondAttribute="trailingMargin" id="FA2-C9-2Ll"/>
                                     <constraint firstItem="DW6-NV-PZ0" firstAttribute="top" secondItem="Y8A-Ec-SbD" secondAttribute="top" id="Ffx-eI-Ye0"/>
+                                    <constraint firstItem="ehD-n7-i92" firstAttribute="top" secondItem="Y8A-Ec-SbD" secondAttribute="bottom" constant="8" id="ImY-R5-oCM"/>
                                     <constraint firstItem="Y8A-Ec-SbD" firstAttribute="top" secondItem="uYj-Df-mTQ" secondAttribute="bottom" constant="8" id="Jii-2j-y93"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="ehD-n7-i92" secondAttribute="bottom" id="Njq-3O-U71"/>
                                     <constraint firstItem="uYj-Df-mTQ" firstAttribute="leading" secondItem="8uN-wE-gIt" secondAttribute="leadingMargin" id="Nqa-6w-rfM"/>
                                     <constraint firstItem="ila-oI-0IR" firstAttribute="trailing" secondItem="8uN-wE-gIt" secondAttribute="trailingMargin" id="czG-OO-Zfc"/>
                                     <constraint firstItem="DW6-NV-PZ0" firstAttribute="trailing" secondItem="8uN-wE-gIt" secondAttribute="trailingMargin" id="jRb-pn-TjB"/>
                                     <constraint firstItem="DW6-NV-PZ0" firstAttribute="leading" secondItem="Y8A-Ec-SbD" secondAttribute="trailing" constant="8" id="jzN-mc-tVw"/>
                                     <constraint firstItem="ila-oI-0IR" firstAttribute="leading" secondItem="8uN-wE-gIt" secondAttribute="leadingMargin" id="lWx-CC-nXc"/>
                                     <constraint firstItem="ila-oI-0IR" firstAttribute="top" secondItem="8uN-wE-gIt" secondAttribute="topMargin" id="rJc-n9-9Tp"/>
+                                    <constraint firstItem="ehD-n7-i92" firstAttribute="leading" secondItem="8uN-wE-gIt" secondAttribute="leadingMargin" id="snk-GT-hqJ"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -192,7 +205,7 @@
                         <outlet property="explanationViewBottomMargin" destination="EBq-QT-l9S" id="cSd-9e-isL"/>
                         <outlet property="feedbackLabel" destination="T8J-WA-eZn" id="ckG-6j-Adu"/>
                         <outlet property="questionLabel" destination="MPr-kz-lMN" id="rWD-89-Gfu"/>
-                        <outlet property="scrollView" destination="8uN-wE-gIt" id="n1f-zi-A7u"/>
+                        <outlet property="scrollView" destination="8uN-wE-gIt" id="d0v-hI-hvD"/>
                         <segue destination="XE0-rk-H5x" kind="show" identifier="showTestResults" id="FBx-QO-5Dt"/>
                     </connections>
                 </viewController>
@@ -228,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5p-rn-jLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3698" y="-368"/>
+            <point key="canvasLocation" x="3680" y="-379"/>
         </scene>
         <!--Choose Topics-->
         <scene sceneID="aeh-3f-4gQ">
