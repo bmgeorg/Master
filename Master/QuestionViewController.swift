@@ -10,6 +10,7 @@ import UIKit
 import Realm
 
 class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHandlingScrollViewDelegate {
+    @IBOutlet weak var topicLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var explanationLabel: UILabel!
     @IBOutlet weak var feedbackLabel: UILabel!
@@ -30,14 +31,19 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         scrollView.keyboardDelegate = self
+        topicLabel.text = question.topic.topic
+        questionLabel.text = question.prompt
     }
     
     @IBAction func checkAnswer() {
         enterButton.enabled = false
         answerTextView.editable = false
         answerTextView.textColor = UIColor.grayColor()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Bordered, target: self, action: "showNextView")
-        
+        if test.hasNextQuestion() {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Bordered, target: self, action: "showNextQuestion")
+        } else {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.Bordered, target: self, action: "finishTest:")
+        }
         if(test.submitAnswer(answerTextView.text)) {
             feedbackLabel.text = "Right!"
             feedbackLabel.textColor = UIColor.greenColor()
@@ -57,12 +63,12 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
         
     }
     
-    @IBAction func showNextView() {
-        if test.hasNextQuestion() {
-            performSegueWithIdentifier("showNextQuestion", sender: self)
-        } else {
-            performSegueWithIdentifier("showTestResults", sender: self)
-        }
+    @IBAction func finishTest(sender: AnyObject) {
+        performSegueWithIdentifier("showTestResults", sender: self)
+    }
+    
+    func showNextQuestion() {
+        performSegueWithIdentifier("showNextQuestion", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

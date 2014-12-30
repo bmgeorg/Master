@@ -69,18 +69,17 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="8uN-wE-gIt" customClass="KeyboardHandlingScrollView" customModule="Master" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ila-oI-0IR" userLabel="Question View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ila-oI-0IR" userLabel="Question View">
                                         <rect key="frame" x="8" y="8" width="584" height="64"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyn-3o-zOf">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyn-3o-zOf">
                                                 <rect key="frame" x="8" y="8" width="568" height="20"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPr-kz-lMN" userLabel="Question">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPr-kz-lMN" userLabel="Question">
                                                 <rect key="frame" x="8" y="36" width="568" height="20"/>
-                                                <mutableString key="text">Question Lorem ipsum dolque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, t ipsum, tristique et mauris nec, dapibus pulvinar orci. Suspendisse ac ligula molestie, fringilla metus eu, ultrices lectus. Nullam molestie lectus in libero tincidunt convallis. Etiam quis lacus in dui scelerisque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, metus eu euismod aliquet, leo nibh elementum est, vel placerat eros enim non lectus. Phasellus ut viverra lectus, a elementum mi. Nulla eu ex augue. Question Lorem ipsum dolque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, t ipsum, tristique et mauris nec, dapibus pulvinar orci. Suspendisse ac ligula molestie, fringilla metus eu, ultrices lectus. Nullam molestie lectus in libero tincidunt convallis. Etiam quis lacus in dui scelerisque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, metus eu euismod aliquet, leo nibh elementum est, vel placerat eros enim non lectus. Phasellus ut viverra lectus, a elementum mi. Nulla eu ex augue. Question Lorem ipsum dolque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, t ipsum, tristique et mauris nec, dapibus pulvinar orci. Suspendisse ac ligula molestie, fringilla metus eu, ultrices lectus. Nullam molestie lectus in libero tincidunt convallis. Etiam quis lacus in dui scelerisque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, metus eu euismod aliquet, leo nibh elementum est, vel placerat eros enim non lectus. Phasellus ut viverra lectus, a elementum mi. Nulla eu ex augue. Question Lorem ipsum dolque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, t ipsum, tristique et mauris nec, dapibus pulvinar orci. Suspendisse ac ligula molestie, fringilla metus eu, ultrices lectus. Nullam molestie lectus in libero tincidunt convallis. Etiam quis lacus in dui scelerisque pharetra sit amet et odio. Nulla id nulla facilisis tortor hendrerit aliquam. Nunc mollis feugiat eros. Suspendisse potenti. Morbi tincidunt, metus eu euismod aliquet, leo nibh elementum est, vel placerat eros enim non lectus. Phasellus ut viverra lectus, a elementum mi. Nulla eu ex augue. </mutableString>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -97,7 +96,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="vyn-3o-zOf" secondAttribute="trailing" id="yO8-22-0di"/>
                                         </constraints>
                                     </view>
-                                    <view alpha="0.0" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uYj-Df-mTQ" userLabel="Explantion View">
+                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYj-Df-mTQ" userLabel="Explantion View">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8J-WA-eZn" userLabel="Feedback">
                                                 <rect key="frame" x="8" y="8" width="568" height="20"/>
@@ -133,7 +132,7 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="erA-Ec-vr2" secondAttribute="bottom" id="xKl-pH-itj"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW6-NV-PZ0">
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DW6-NV-PZ0">
                                         <rect key="frame" x="543" y="80" width="49" height="30"/>
                                         <state key="normal" title="Submit">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -142,11 +141,11 @@
                                             <action selector="checkAnswer" destination="2K0-8e-Oj9" eventType="touchUpInside" id="xrR-aZ-Zk5"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8A-Ec-SbD" userLabel="Answer View" customClass="ResizingTextView" customModule="Master" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="80" width="527" height="142"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8A-Ec-SbD" userLabel="Answer View" customClass="ResizingTextView" customModule="Master" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="80" width="527" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="142" id="IWg-Zq-2ru"/>
+                                            <constraint firstAttribute="height" constant="30" id="IWg-Zq-2ru"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no"/>
@@ -154,8 +153,7 @@
                                             <outlet property="delegate" destination="2K0-8e-Oj9" id="WZT-Ll-OeP"/>
                                         </connections>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehD-n7-i92">
-                                        <rect key="frame" x="8" y="230" width="584" height="227"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehD-n7-i92">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -192,7 +190,7 @@
                     <navigationItem key="navigationItem" title="Test" id="dzO-c3-KFu">
                         <barButtonItem key="rightBarButtonItem" title="Finish Early" id="6IH-Zw-eIi">
                             <connections>
-                                <action selector="showNextView" destination="2K0-8e-Oj9" id="8bC-3S-IF3"/>
+                                <action selector="finishTest:" destination="2K0-8e-Oj9" id="HBk-lY-MHu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -206,6 +204,7 @@
                         <outlet property="feedbackLabel" destination="T8J-WA-eZn" id="ckG-6j-Adu"/>
                         <outlet property="questionLabel" destination="MPr-kz-lMN" id="rWD-89-Gfu"/>
                         <outlet property="scrollView" destination="8uN-wE-gIt" id="d0v-hI-hvD"/>
+                        <outlet property="topicLabel" destination="vyn-3o-zOf" id="2Py-JF-udI"/>
                         <segue destination="XE0-rk-H5x" kind="show" identifier="showTestResults" id="FBx-QO-5Dt"/>
                     </connections>
                 </viewController>
