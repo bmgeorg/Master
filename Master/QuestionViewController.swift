@@ -11,10 +11,10 @@ import Realm
 
 class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHandlingScrollViewDelegate {
     @IBOutlet weak var topicLabel: UILabel!
-    @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var explanationLabel: UILabel!
+    @IBOutlet weak var questionTextView: ResizingTextView!
+    @IBOutlet weak var explanationTextView: ResizingTextView!
     @IBOutlet weak var feedbackLabel: UILabel!
-    @IBOutlet weak var answerTextView: ResizingTextView!
+    @IBOutlet weak var answerTextView: PlaceholderTextView!
     @IBOutlet weak var enterButton: UIButton!
     @IBOutlet weak var explanationView: UIView!
     @IBOutlet weak var explanationViewBottomMargin: NSLayoutConstraint!
@@ -32,10 +32,15 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
         self.navigationItem.hidesBackButton = true
         scrollView.keyboardDelegate = self
         topicLabel.text = question.topic.topic
-        questionLabel.text = question.prompt
+        questionTextView.text = question.prompt
+        explanationTextView.text = question.explanation
     }
     
     @IBAction func checkAnswer() {
+        //TODO: Don't let user submit empty answer. Prompt to answer.
+        /*if answerTextView.text.isEmpty {
+            return
+        }*/
         enterButton.enabled = false
         answerTextView.editable = false
         answerTextView.textColor = UIColor.grayColor()
@@ -51,7 +56,6 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
             feedbackLabel.text = "Wrong!"
             feedbackLabel.textColor = UIColor.redColor()
         }
-        explanationLabel.text = question.explanation
         
         view.layoutIfNeeded()
         explanationHeightConstraint.constant = self.UNBOUNDED_HEIGHT
