@@ -35,8 +35,8 @@ class TestReportViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ResultCell", forIndexPath: indexPath) as ResultCell
-        cell.indexLabel.text = String(indexPath.row)
-        if report.questions[indexPath.row].solved {
+        cell.indexLabel.text = String(indexPath.row+1)
+        if report.solved[indexPath.row] {
             cell.solvedLabel.text = "solved"
             cell.solvedLabel.textColor = UIColor.greenColor()
         } else {
