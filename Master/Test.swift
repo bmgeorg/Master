@@ -35,13 +35,12 @@ class Test {
         
         //Randomly select numQuestions from allQuestions to fill questionList
         for i in 0..<NUM_QUESTIONS {
-            let idx = i + Int(arc4random())%(NUM_QUESTIONS-i)
+            let idx = i + Int(arc4random())%(allQuestions.count-i)
             println(idx)
             //swap questions at i and idx
             let temp = allQuestions[i]
             allQuestions[i] = allQuestions[idx]
             allQuestions[idx] = temp
-            
             questionList.append(allQuestions[i])
         }
     }
