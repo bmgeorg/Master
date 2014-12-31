@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIFont {
-    class func preferredFontForTextStyle(style: String) -> CGFloat {
+    class func preferredFontSizeForTextStyle(style: String) -> CGFloat {
         let fontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(style)
         return fontDescriptor.pointSize
     }
