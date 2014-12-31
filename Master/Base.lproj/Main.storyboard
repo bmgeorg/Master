@@ -212,10 +212,10 @@
             </objects>
             <point key="canvasLocation" x="2906" y="-379"/>
         </scene>
-        <!--View Controller-->
+        <!--Results-->
         <scene sceneID="Yzr-80-WUM">
             <objects>
-                <viewController id="XE0-rk-H5x" sceneMemberID="viewController">
+                <viewController id="XE0-rk-H5x" customClass="TestReportViewController" customModule="Master" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5WZ-zL-AGb"/>
                         <viewControllerLayoutGuide type="bottom" id="4gB-5E-o6f"/>
@@ -224,19 +224,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You finished the test!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSD-2f-t0X">
-                                <rect key="frame" x="220" y="289" width="160" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lTV-qR-esg">
+                                <rect key="frame" x="16" y="144" width="568" height="436"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" id="X6I-gV-2bE" customClass="ResultCell" customModule="Master" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X6I-gV-2bE" id="O69-5L-LXh">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj9-cN-H4J" userLabel="Index">
+                                                    <rect key="frame" x="8" y="11" width="15" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Solved" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aM1-nV-y1m">
+                                                    <rect key="frame" x="31" y="11" width="53" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="aM1-nV-y1m" secondAttribute="bottom" id="6fF-Fc-d5b"/>
+                                                <constraint firstItem="aM1-nV-y1m" firstAttribute="leading" secondItem="cj9-cN-H4J" secondAttribute="trailing" constant="8" id="BBT-oP-RpW"/>
+                                                <constraint firstItem="cj9-cN-H4J" firstAttribute="leading" secondItem="O69-5L-LXh" secondAttribute="leadingMargin" id="FuQ-uE-yrG"/>
+                                                <constraint firstItem="cj9-cN-H4J" firstAttribute="top" secondItem="O69-5L-LXh" secondAttribute="topMargin" id="OiO-e6-fjp"/>
+                                                <constraint firstItem="aM1-nV-y1m" firstAttribute="top" secondItem="O69-5L-LXh" secondAttribute="topMargin" id="hcJ-Ki-3Ak"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cj9-cN-H4J" secondAttribute="bottom" id="yVU-LK-Fd7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="indexLabel" destination="cj9-cN-H4J" id="gLq-gx-siN"/>
+                                            <outlet property="solvedLabel" destination="aM1-nV-y1m" id="lVd-Oe-Vd1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XE0-rk-H5x" id="z1K-xA-xhz"/>
+                                    <outlet property="delegate" destination="XE0-rk-H5x" id="4cF-Ys-HBm"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You solved 5/10 questions!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSD-2f-t0X" userLabel="You Solved">
+                                <rect key="frame" x="16" y="89" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="GSD-2f-t0X" secondAttribute="centerY" id="WMv-H1-TaB"/>
-                            <constraint firstAttribute="centerX" secondItem="GSD-2f-t0X" secondAttribute="centerX" id="uww-Qc-2JA"/>
+                            <constraint firstItem="lTV-qR-esg" firstAttribute="leading" secondItem="qGb-D8-osR" secondAttribute="leadingMargin" id="AcK-ae-C6h"/>
+                            <constraint firstItem="lTV-qR-esg" firstAttribute="top" secondItem="GSD-2f-t0X" secondAttribute="bottom" constant="25" id="Kds-5c-KSg"/>
+                            <constraint firstItem="GSD-2f-t0X" firstAttribute="leading" secondItem="qGb-D8-osR" secondAttribute="leadingMargin" id="Q6g-Xz-gNl"/>
+                            <constraint firstItem="4gB-5E-o6f" firstAttribute="top" secondItem="lTV-qR-esg" secondAttribute="bottom" constant="20" id="b6j-C7-Wk1"/>
+                            <constraint firstItem="GSD-2f-t0X" firstAttribute="trailing" secondItem="qGb-D8-osR" secondAttribute="trailingMargin" id="dwT-jK-bhN"/>
+                            <constraint firstItem="GSD-2f-t0X" firstAttribute="top" secondItem="5WZ-zL-AGb" secondAttribute="bottom" constant="25" id="spd-gC-8bJ"/>
+                            <constraint firstItem="lTV-qR-esg" firstAttribute="trailing" secondItem="qGb-D8-osR" secondAttribute="trailingMargin" id="yvb-xR-mtF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Results" id="WH2-wp-TQn">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="6Jj-20-75J">
+                            <connections>
+                                <action selector="finish:" destination="XE0-rk-H5x" id="VbT-kF-rSU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="resultsTable" destination="lTV-qR-esg" id="AeE-Bg-WiB"/>
+                        <outlet property="youSolvedLabel" destination="GSD-2f-t0X" id="Mas-te-be9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5p-rn-jLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

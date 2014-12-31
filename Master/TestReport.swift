@@ -16,4 +16,13 @@ class TestReport {
         self.questions = questions
         self.solved = solved
     }
+    lazy var numSolved: Int = {
+        var count = 0
+        for question in self.questions {
+            if question.solved {
+                count++
+            }
+        }
+        return count
+    }()
 }

@@ -73,7 +73,8 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showTestResults" {
-            
+            let dest = segue.destinationViewController as TestReportViewController
+            dest.report = test.createTestReport()
         } else if segue.identifier == "showNextQuestion" {
             let dest = segue.destinationViewController as QuestionViewController
             dest.test = test

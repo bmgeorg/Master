@@ -13,6 +13,8 @@
 		8B0B30921A513B4B005B35C7 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B30911A513B4B005B35C7 /* Test.swift */; };
 		8B0B30941A51C74F005B35C7 /* TestReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B30931A51C74F005B35C7 /* TestReport.swift */; };
 		8B0B30961A51F28A005B35C7 /* HighlightableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B30951A51F28A005B35C7 /* HighlightableButton.swift */; };
+		8B21106C1A538515006BD613 /* TestReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B21106B1A538515006BD613 /* TestReportViewController.swift */; };
+		8B21106E1A538857006BD613 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B21106D1A538857006BD613 /* ResultCell.swift */; };
 		8B2521C31A535B7B003CC403 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2521C21A535B7B003CC403 /* PlaceholderTextView.swift */; };
 		8B2CF2061A53277E009D31A2 /* KeyboardHandlingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2CF2051A53277E009D31A2 /* KeyboardHandlingScrollView.swift */; };
 		8B2CF2081A5327EF009D31A2 /* KeyboardHandlingScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2CF2071A5327EF009D31A2 /* KeyboardHandlingScrollViewDelegate.swift */; };
@@ -52,6 +54,8 @@
 		8B0B30911A513B4B005B35C7 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		8B0B30931A51C74F005B35C7 /* TestReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestReport.swift; sourceTree = "<group>"; };
 		8B0B30951A51F28A005B35C7 /* HighlightableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightableButton.swift; sourceTree = "<group>"; };
+		8B21106B1A538515006BD613 /* TestReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestReportViewController.swift; sourceTree = "<group>"; };
+		8B21106D1A538857006BD613 /* ResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		8B2521C21A535B7B003CC403 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		8B2CF2051A53277E009D31A2 /* KeyboardHandlingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandlingScrollView.swift; sourceTree = "<group>"; };
 		8B2CF2071A5327EF009D31A2 /* KeyboardHandlingScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandlingScrollViewDelegate.swift; sourceTree = "<group>"; };
@@ -147,9 +151,9 @@
 				8BB6407D1A4A05C700F6A4A1 /* AppDelegate.swift */,
 				8B4638221A4A30B5008E3BA3 /* Model */,
 				8B083AC71A4DCD03003935C7 /* TopicListViewController.swift */,
-				8B083AC91A4DD0B2003935C7 /* TopicCell.swift */,
 				8B4638591A4A4D8D008E3BA3 /* QuestionViewController.swift */,
 				8BB640811A4A05C700F6A4A1 /* Main.storyboard */,
+				8B21106B1A538515006BD613 /* TestReportViewController.swift */,
 				8BFA20611A50D2A800A7312C /* Views */,
 				8BB69C671A4D1EE7004A5D57 /* Images */,
 				8B083ACD1A4E090D003935C7 /* Old Code */,
@@ -197,6 +201,8 @@
 		8BFA20611A50D2A800A7312C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8B083AC91A4DD0B2003935C7 /* TopicCell.swift */,
+				8B21106D1A538857006BD613 /* ResultCell.swift */,
 				8BFA205F1A50D2A200A7312C /* ResizingTextView.swift */,
 				8B2521C21A535B7B003CC403 /* PlaceholderTextView.swift */,
 				8B0B30951A51F28A005B35C7 /* HighlightableButton.swift */,
@@ -312,6 +318,7 @@
 				8B4638151A4A0A03008E3BA3 /* OldMainMenuViewController.swift in Sources */,
 				8B4638171A4A0F37008E3BA3 /* ArchiveViewController.swift in Sources */,
 				8B2521C31A535B7B003CC403 /* PlaceholderTextView.swift in Sources */,
+				8B21106C1A538515006BD613 /* TestReportViewController.swift in Sources */,
 				8B083ACC1A4E031E003935C7 /* Topic.swift in Sources */,
 				8B4638281A4A315A008E3BA3 /* RLMSupport.swift in Sources */,
 				8B083ACA1A4DD0B2003935C7 /* TopicCell.swift in Sources */,
@@ -325,6 +332,7 @@
 				8B46385A1A4A4D8D008E3BA3 /* QuestionViewController.swift in Sources */,
 				8BB6407E1A4A05C700F6A4A1 /* AppDelegate.swift in Sources */,
 				8B083AC81A4DCD03003935C7 /* TopicListViewController.swift in Sources */,
+				8B21106E1A538857006BD613 /* ResultCell.swift in Sources */,
 				8B2CF2081A5327EF009D31A2 /* KeyboardHandlingScrollViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

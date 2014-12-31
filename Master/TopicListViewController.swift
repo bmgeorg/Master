@@ -58,7 +58,7 @@ class TopicListViewController: UIViewController, UITableViewDelegate, UITableVie
     internal func updateChooseTopicsButton() {
         var text = ""
         if let chosenIndexPaths = tableView.indexPathsForSelectedRows() {
-            text = "\((chosenIndexPaths as [NSIndexPath]).count) selected"
+            text = "Choose \((chosenIndexPaths as [NSIndexPath]).count) Topic"
         } else {
             text = "Choose Random Topics"
         }
