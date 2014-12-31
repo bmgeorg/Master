@@ -13,6 +13,7 @@
 		8B0B30921A513B4B005B35C7 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B30911A513B4B005B35C7 /* Test.swift */; };
 		8B0B30941A51C74F005B35C7 /* TestReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B30931A51C74F005B35C7 /* TestReport.swift */; };
 		8B0B30961A51F28A005B35C7 /* HighlightableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0B30951A51F28A005B35C7 /* HighlightableButton.swift */; };
+		8B2521C31A535B7B003CC403 /* PlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2521C21A535B7B003CC403 /* PlaceholderTextView.swift */; };
 		8B2CF2061A53277E009D31A2 /* KeyboardHandlingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2CF2051A53277E009D31A2 /* KeyboardHandlingScrollView.swift */; };
 		8B2CF2081A5327EF009D31A2 /* KeyboardHandlingScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2CF2071A5327EF009D31A2 /* KeyboardHandlingScrollViewDelegate.swift */; };
 		8B4638151A4A0A03008E3BA3 /* OldMainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4638141A4A0A03008E3BA3 /* OldMainMenuViewController.swift */; };
@@ -51,6 +52,7 @@
 		8B0B30911A513B4B005B35C7 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		8B0B30931A51C74F005B35C7 /* TestReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestReport.swift; sourceTree = "<group>"; };
 		8B0B30951A51F28A005B35C7 /* HighlightableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightableButton.swift; sourceTree = "<group>"; };
+		8B2521C21A535B7B003CC403 /* PlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderTextView.swift; sourceTree = "<group>"; };
 		8B2CF2051A53277E009D31A2 /* KeyboardHandlingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandlingScrollView.swift; sourceTree = "<group>"; };
 		8B2CF2071A5327EF009D31A2 /* KeyboardHandlingScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHandlingScrollViewDelegate.swift; sourceTree = "<group>"; };
 		8B4638141A4A0A03008E3BA3 /* OldMainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OldMainMenuViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				8BFA205F1A50D2A200A7312C /* ResizingTextView.swift */,
+				8B2521C21A535B7B003CC403 /* PlaceholderTextView.swift */,
 				8B0B30951A51F28A005B35C7 /* HighlightableButton.swift */,
 				8B2CF2051A53277E009D31A2 /* KeyboardHandlingScrollView.swift */,
 				8B2CF2071A5327EF009D31A2 /* KeyboardHandlingScrollViewDelegate.swift */,
@@ -308,6 +311,7 @@
 				8B0B30961A51F28A005B35C7 /* HighlightableButton.swift in Sources */,
 				8B4638151A4A0A03008E3BA3 /* OldMainMenuViewController.swift in Sources */,
 				8B4638171A4A0F37008E3BA3 /* ArchiveViewController.swift in Sources */,
+				8B2521C31A535B7B003CC403 /* PlaceholderTextView.swift in Sources */,
 				8B083ACC1A4E031E003935C7 /* Topic.swift in Sources */,
 				8B4638281A4A315A008E3BA3 /* RLMSupport.swift in Sources */,
 				8B083ACA1A4DD0B2003935C7 /* TopicCell.swift in Sources */,

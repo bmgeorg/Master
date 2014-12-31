@@ -23,24 +23,30 @@ class ResizingTextView: UITextView {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("textDidChange:"), name:UITextViewTextDidChangeNotification, object: self);
     }
     
+    internal func commonInit() {
+        listenToTextChanges()
+        self.scrollEnabled = false
+        self.bounces = false
+    }
+    
     override init() {
         super.init()
-        listenToTextChanges()
+        commonInit()
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        listenToTextChanges()
+        commonInit()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        listenToTextChanges()
+        commonInit()
     }
     
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
-        listenToTextChanges()
+        commonInit()
     }
     
     override func layoutSubviews() {
