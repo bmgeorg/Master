@@ -141,11 +141,11 @@
                                             <action selector="checkAnswer" destination="2K0-8e-Oj9" eventType="touchUpInside" id="xrR-aZ-Zk5"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8A-Ec-SbD" userLabel="Answer View" customClass="ResizingTextView" customModule="Master" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="80" width="527" height="30"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" text="Answer" translatesAutoresizingMaskIntoConstraints="NO" id="Y8A-Ec-SbD" userLabel="Answer View" customClass="PlaceholderTextView" customModule="Master" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="80" width="527" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="IWg-Zq-2ru"/>
+                                            <constraint firstAttribute="height" constant="40" id="IWg-Zq-2ru"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no"/>
