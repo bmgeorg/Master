@@ -20,13 +20,5 @@ class ReplaceSegue: UIStoryboardSegue {
         controllerStack.removeLast()
         controllerStack.append(dest)
         nav.setViewControllers(controllerStack, animated: true)
-        println(controllerStack.count)
-        /*var controllerStack = nav.vi
-        NSMutableArray *controllerStack = [NSMutableArray arrayWithArray:navigationController.viewControllers];
-        // Replace the source controller with the destination controller, wherever the source may be
-        [controllerStack replaceObjectAtIndex:[controllerStack indexOfObject:sourceViewController] withObject:destinationController];
-        
-        // Assign the updated stack with animation
-        [navigationController setViewControllers:controllerStack animated:YES];*/
     }
 }
