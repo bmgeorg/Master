@@ -30,7 +30,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="9"/>
+                                        <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -333,8 +333,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="adj-dw-pS3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="adj-dw-pS3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="537"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopicCell" rowHeight="60" id="5WO-9X-Pm5" customClass="TopicCell" customModule="Master" customModuleProvider="target">
@@ -380,25 +380,43 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xR-X5-Tjs" userLabel="Bottom ToolBar">
-                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="537" width="600" height="63"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPe-AF-2bG" customClass="HighlightableButton" customModule="Master" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                        <rect key="frame" x="10" y="13" width="580" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="aoR-5z-ddq"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Choose Random Topics"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="2K0-8e-Oj9" kind="show" identifier="startTest" id="aW6-d1-MWE"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LR1-O7-yz5" userLabel="Separator">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="3"/>
+                                        <color key="backgroundColor" red="0.83529411764705885" green="0.83529411764705885" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="shj-2F-wGJ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="28y-5W-NMW"/>
-                                    <constraint firstItem="YPe-AF-2bG" firstAttribute="leading" secondItem="1xR-X5-Tjs" secondAttribute="leading" id="cSM-9W-w7J"/>
-                                    <constraint firstAttribute="bottom" secondItem="YPe-AF-2bG" secondAttribute="bottom" id="fIT-sp-Uy3"/>
-                                    <constraint firstItem="YPe-AF-2bG" firstAttribute="top" secondItem="1xR-X5-Tjs" secondAttribute="top" id="fpv-Ch-kHt"/>
-                                    <constraint firstAttribute="trailing" secondItem="YPe-AF-2bG" secondAttribute="trailing" id="h9Y-tS-NDh"/>
+                                    <constraint firstAttribute="bottom" secondItem="YPe-AF-2bG" secondAttribute="bottom" constant="10" id="254-Qq-eqJ"/>
+                                    <constraint firstItem="YPe-AF-2bG" firstAttribute="top" secondItem="LR1-O7-yz5" secondAttribute="bottom" constant="10" id="9VJ-VP-qxc"/>
+                                    <constraint firstItem="LR1-O7-yz5" firstAttribute="top" secondItem="1xR-X5-Tjs" secondAttribute="top" id="BJi-FR-JV3"/>
+                                    <constraint firstAttribute="trailing" secondItem="LR1-O7-yz5" secondAttribute="trailing" id="o37-ee-Iwh"/>
+                                    <constraint firstItem="YPe-AF-2bG" firstAttribute="leading" secondItem="1xR-X5-Tjs" secondAttribute="leading" constant="10" id="rBP-bA-OX8"/>
+                                    <constraint firstAttribute="trailing" secondItem="YPe-AF-2bG" secondAttribute="trailing" constant="10" id="uSS-XI-6ei"/>
+                                    <constraint firstItem="LR1-O7-yz5" firstAttribute="leading" secondItem="1xR-X5-Tjs" secondAttribute="leading" id="we7-JL-W0I"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -408,7 +426,6 @@
                             <constraint firstItem="1xR-X5-Tjs" firstAttribute="leading" secondItem="VJE-BS-9mO" secondAttribute="leading" id="DdN-hy-AEn"/>
                             <constraint firstItem="adj-dw-pS3" firstAttribute="top" secondItem="VJE-BS-9mO" secondAttribute="top" id="WsC-Ib-GlI"/>
                             <constraint firstItem="1xR-X5-Tjs" firstAttribute="top" secondItem="adj-dw-pS3" secondAttribute="bottom" id="dEP-HM-xWC"/>
-                            <constraint firstItem="1xR-X5-Tjs" firstAttribute="top" secondItem="adj-dw-pS3" secondAttribute="bottom" id="fGw-AQ-kF2"/>
                             <constraint firstAttribute="bottom" secondItem="1xR-X5-Tjs" secondAttribute="bottom" id="hug-C2-XaX"/>
                             <constraint firstAttribute="trailing" secondItem="adj-dw-pS3" secondAttribute="trailing" id="vVz-cR-QsZ"/>
                             <constraint firstAttribute="trailing" secondItem="1xR-X5-Tjs" secondAttribute="trailing" id="yfv-Io-23k"/>
