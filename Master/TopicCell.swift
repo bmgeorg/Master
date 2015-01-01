@@ -12,4 +12,5 @@ class TopicCell: UITableViewCell {
     
     @IBOutlet weak var checkmarkView: UIImageView!
     @IBOutlet weak var topicLabel: UILabel!
+    @IBOutlet weak var percentLabel: UILabel!
 }

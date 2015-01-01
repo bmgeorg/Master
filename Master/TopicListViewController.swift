@@ -38,18 +38,21 @@ class TopicListViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier("TopicCell", forIndexPath: indexPath) as TopicCell
         let topic = topics[UInt(indexPath.row)] as Topic
         cell.topicLabel.text = topic.topic
+        cell.percentLabel.text = String(format: "%.1f%%", Double(topic.numSolved)/Double(topic.questions.count))
         return cell
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as TopicCell
         cell.checkmarkView.image = UIImage(named: "CheckmarkBorder")
+        cell.topicLabel.highlighted = false
         updateChooseTopicsButton()
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath) as TopicCell
         cell.checkmarkView.image = UIImage(named: "Checkmark")
+        cell.topicLabel.highlighted = true
         updateChooseTopicsButton()
     }
     
