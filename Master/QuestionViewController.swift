@@ -32,8 +32,8 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
         self.navigationItem.hidesBackButton = true
         scrollView.keyboardDelegate = self
         topicLabel.text = question.topic.topic
-        questionTextView.text = question.prompt
-        explanationTextView.text = question.explanation
+        questionTextView.attributedText = TextAttributor.attributeText(question.prompt)
+        explanationTextView.attributedText = TextAttributor.attributeText(question.explanation)
     }
     
     @IBAction func checkAnswer() {

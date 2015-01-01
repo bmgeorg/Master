@@ -34,6 +34,9 @@
 		8BB640881A4A05C700F6A4A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB640861A4A05C700F6A4A1 /* LaunchScreen.xib */; };
 		8BB640941A4A05C700F6A4A1 /* MasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB640931A4A05C700F6A4A1 /* MasterTests.swift */; };
 		8BB69C691A4D2268004A5D57 /* diagonal.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB69C681A4D2268004A5D57 /* diagonal.png */; };
+		8BC3B0601A5473EE00385B18 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3B05F1A5473EE00385B18 /* StringExtensions.swift */; };
+		8BF824231A54532B00165965 /* TextAttributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF824221A54532B00165965 /* TextAttributor.swift */; };
+		8BF824251A54624F00165965 /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF824241A54624F00165965 /* UIFontExtensions.swift */; };
 		8BFA20601A50D2A200A7312C /* ResizingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA205F1A50D2A200A7312C /* ResizingTextView.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +82,9 @@
 		8BB640921A4A05C700F6A4A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BB640931A4A05C700F6A4A1 /* MasterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTests.swift; sourceTree = "<group>"; };
 		8BB69C681A4D2268004A5D57 /* diagonal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diagonal.png; sourceTree = "<group>"; };
+		8BC3B05F1A5473EE00385B18 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		8BF824221A54532B00165965 /* TextAttributor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAttributor.swift; sourceTree = "<group>"; };
+		8BF824241A54624F00165965 /* UIFontExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 		8BFA205F1A50D2A200A7312C /* ResizingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizingTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,7 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				8BB6407D1A4A05C700F6A4A1 /* AppDelegate.swift */,
+				8BC3B05E1A5473E300385B18 /* Extensions */,
 				8B4638221A4A30B5008E3BA3 /* Model */,
+				8BF824221A54532B00165965 /* TextAttributor.swift */,
 				8B083AC71A4DCD03003935C7 /* TopicListViewController.swift */,
 				8B4638591A4A4D8D008E3BA3 /* QuestionViewController.swift */,
 				8BB640811A4A05C700F6A4A1 /* Main.storyboard */,
@@ -196,6 +204,15 @@
 				8B46381A1A4A1CA9008E3BA3 /* checkmark.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		8BC3B05E1A5473E300385B18 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8BF824241A54624F00165965 /* UIFontExtensions.swift */,
+				8BC3B05F1A5473EE00385B18 /* StringExtensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		8BFA20611A50D2A800A7312C /* Views */ = {
@@ -318,12 +335,15 @@
 				8B4638151A4A0A03008E3BA3 /* OldMainMenuViewController.swift in Sources */,
 				8B4638171A4A0F37008E3BA3 /* ArchiveViewController.swift in Sources */,
 				8B2521C31A535B7B003CC403 /* PlaceholderTextView.swift in Sources */,
+				8BF824251A54624F00165965 /* UIFontExtensions.swift in Sources */,
 				8B21106C1A538515006BD613 /* TestReportViewController.swift in Sources */,
 				8B083ACC1A4E031E003935C7 /* Topic.swift in Sources */,
 				8B4638281A4A315A008E3BA3 /* RLMSupport.swift in Sources */,
 				8B083ACA1A4DD0B2003935C7 /* TopicCell.swift in Sources */,
 				8B2CF2061A53277E009D31A2 /* KeyboardHandlingScrollView.swift in Sources */,
 				8B0B30941A51C74F005B35C7 /* TestReport.swift in Sources */,
+				8BF824231A54532B00165965 /* TextAttributor.swift in Sources */,
+				8BC3B0601A5473EE00385B18 /* StringExtensions.swift in Sources */,
 				8B46381D1A4A200F008E3BA3 /* ArchiveQuestionCell.swift in Sources */,
 				8B0B30921A513B4B005B35C7 /* Test.swift in Sources */,
 				8B4638211A4A30AF008E3BA3 /* Question.swift in Sources */,
