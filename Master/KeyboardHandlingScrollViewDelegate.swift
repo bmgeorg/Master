@@ -10,7 +10,7 @@ import UIKit
 
 @objc protocol KeyboardHandlingScrollViewDelegate {
     //Scrolls active field to visible when keyboard appears
-    func getActiveField() -> UIView?
+    optional func getActiveField() -> UIView?
     optional func shouldDismissKeyboardForTap(touch: UITouch) -> Bool
     //defaults to no padding
     optional func marginAroundActiveField() -> CGFloat
