@@ -15,7 +15,7 @@ class Test {
     var solved: [Bool]
     var questionIndex = -1
     
-    let NUM_QUESTIONS = 2
+    let NUM_QUESTIONS = 4
     
     init(topics: [Topic]) {
         self.topics = topics
@@ -36,7 +36,6 @@ class Test {
         //Randomly select numQuestions from allQuestions to fill questionList
         for i in 0..<NUM_QUESTIONS {
             let idx = i + Int(arc4random())%(allQuestions.count-i)
-            println(idx)
             //swap questions at i and idx
             let temp = allQuestions[i]
             allQuestions[i] = allQuestions[idx]
