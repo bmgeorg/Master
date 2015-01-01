@@ -9,7 +9,7 @@
 import UIKit
 
 class TopicCell: UITableViewCell {
-    @IBOutlet weak var completedLabel: UILabel!
-    @IBOutlet weak var outOfLabel: UILabel!
+    
+    @IBOutlet weak var checkmarkView: UIImageView!
     @IBOutlet weak var topicLabel: UILabel!
 }
