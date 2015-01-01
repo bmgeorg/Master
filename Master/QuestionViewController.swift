@@ -20,13 +20,13 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
     @IBOutlet weak var explanationViewBottomMargin: NSLayoutConstraint!
     @IBOutlet weak var explanationHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollView: KeyboardHandlingScrollView!
-    var activeField: UIView?
     
     var question: Question!
     var test: Test!
     
     let UNBOUNDED_HEIGHT: CGFloat = 100000000
     
+    //Reuse
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
@@ -35,6 +35,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
         questionTextView.attributedText = TextAttributor.attributeText(question.prompt)
         explanationTextView.attributedText = TextAttributor.attributeText(question.explanation)
     }
+    //end
     
     @IBAction func checkAnswer() {
         //TODO: Don't let user submit empty answer. Prompt to answer.
@@ -44,11 +45,15 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
         enterButton.enabled = false
         answerTextView.editable = false
         answerTextView.textColor = UIColor.grayColor()
+        
+        //Reuse
         if test.hasNextQuestion() {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Bordered, target: self, action: "showNextQuestion")
         } else {
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Finish", style: UIBarButtonItemStyle.Bordered, target: self, action: "finishTest:")
         }
+        //end
+        
         if(test.submitAnswer(answerTextView.text)) {
             feedbackLabel.text = "Right!"
             feedbackLabel.textColor = UIColor.greenColor()
@@ -57,6 +62,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
             feedbackLabel.textColor = UIColor.redColor()
         }
         
+        //Reuse
         view.layoutIfNeeded()
         explanationHeightConstraint.constant = self.UNBOUNDED_HEIGHT
         explanationViewBottomMargin.constant = 8
@@ -64,7 +70,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
             self.explanationView.alpha = 1
             self.view.layoutIfNeeded()
             }, completion: nil)
-        
+        //end
     }
     
     @IBAction func finishTest(sender: AnyObject) {
@@ -75,6 +81,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
         performSegueWithIdentifier("showNextQuestion", sender: self)
     }
     
+    //Reuse
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showTestResults" {
             let dest = segue.destinationViewController as TestReportViewController
@@ -87,21 +94,13 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
             assertionFailure("Unrecognized segue identifier from QuestionViewController.")
         }
     }
-    
-    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
-        activeField = textView
-        return true
-    }
-    
-    func textViewDidEndEditing(textView: UITextView) {
-        activeField = nil
-    }
+    //end
     
     func getActiveField() -> UIView? {
-        return activeField
+        return answerTextView
     }
     
-    func shouldDismissKeyboardForTap(touch: UITouch) -> Bool {
+    func scrollViewShouldReceiveTapAndDismissKeyboard(touch: UITouch) -> Bool {
         return !touch.view.isDescendantOfView(enterButton)
     }
     

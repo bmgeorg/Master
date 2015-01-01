@@ -18,7 +18,7 @@ class KeyboardHandlingScrollView: UIScrollView, UIGestureRecognizerDelegate {
         addDismissKeyboardRecognizer()
     }
     
-    //close keyboard tap outside of keyboard, except when tap is on enterButton (see gestureRecognizer: shouldReceiveTouch: method)
+    //close keyboard tap outside of keyboard, if delegate allows (see gestureRecognizer: shouldReceiveTouch: method)
     internal func addDismissKeyboardRecognizer() {
         tapGR = UITapGestureRecognizer(target: self, action:"dismissKeyboard")
         tapGR!.cancelsTouchesInView = false
@@ -56,7 +56,7 @@ class KeyboardHandlingScrollView: UIScrollView, UIGestureRecognizerDelegate {
             scrollIndicatorInsets = contentInsets
             contentInset = contentInsets
             
-            if let view = keyboardDelegate?.getActiveField() {
+            if let view = keyboardDelegate?.getActiveField?() {
                 var frame = view.frame
                 if let margin = keyboardDelegate?.marginAroundActiveField?() {
                     frame = CGRectInset(frame, -margin, -margin)
@@ -76,8 +76,8 @@ class KeyboardHandlingScrollView: UIScrollView, UIGestureRecognizerDelegate {
     //do not close keyboard when tap is on enter button
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
         if gestureRecognizer === tapGR {
-            if keyboardDelegate?.shouldDismissKeyboardForTap? != nil {
-                return keyboardDelegate!.shouldDismissKeyboardForTap!(touch)
+            if keyboardDelegate?.scrollViewShouldReceiveTapAndDismissKeyboard? != nil {
+                return keyboardDelegate!.scrollViewShouldReceiveTapAndDismissKeyboard!(touch)
             }
         }
         return true
