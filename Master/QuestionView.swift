@@ -8,11 +8,19 @@
 
 import UIKit
 
-class QuestionView: UIView {
+@IBDesignable class QuestionView: UIView {
     var view: UIView!
     
     @IBOutlet weak var topicLabel: UILabel!
-
+    @IBOutlet weak var questionTextView: UITextView!
+    @IBOutlet weak var explanationView: UIView!
+    @IBOutlet weak var feedbackLabel: UILabel!
+    @IBOutlet weak var explanationTextView: UITextView!
+    @IBOutlet weak var explanationViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var explanationMarginConstraint: NSLayoutConstraint!
+    
+    let UNBOUNDED_HEIGHT: CGFloat = 100000000
+    
     internal func setup() {
         view = loadViewFromNib()
         
@@ -35,8 +43,18 @@ class QuestionView: UIView {
     internal func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "QuestionView", bundle: bundle)
-        let view = nib.instantiateWithOwner(nil, options: nil)[0] as UIView
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as UIView
         
         return view
+    }
+    
+    func showExplanation() {
+        view.layoutIfNeeded()
+        UIView.animateWithDuration(1, animations: {
+            self.explanationViewHeightConstraint.constant = self.UNBOUNDED_HEIGHT
+            self.explanationMarginConstraint.constant = 8
+            self.explanationView.alpha = 1
+            self.view.layoutIfNeeded()
+            }, completion: nil)
     }
 }

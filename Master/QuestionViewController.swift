@@ -10,30 +10,22 @@ import UIKit
 import Realm
 
 class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHandlingScrollViewDelegate {
-    @IBOutlet weak var topicLabel: UILabel!
-    @IBOutlet weak var questionTextView: ResizingTextView!
-    @IBOutlet weak var explanationTextView: ResizingTextView!
-    @IBOutlet weak var feedbackLabel: UILabel!
-    @IBOutlet weak var answerTextView: PlaceholderTextView!
     @IBOutlet weak var enterButton: UIButton!
-    @IBOutlet weak var explanationView: UIView!
-    @IBOutlet weak var explanationViewBottomMargin: NSLayoutConstraint!
-    @IBOutlet weak var explanationHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollView: KeyboardHandlingScrollView!
+    @IBOutlet weak var questionView: QuestionView!
+    @IBOutlet weak var answerTextView: PlaceholderTextView!
     
     var question: Question!
     var test: Test!
-    
-    let UNBOUNDED_HEIGHT: CGFloat = 100000000
     
     //Reuse
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         scrollView.keyboardDelegate = self
-        topicLabel.text = question.topic.topic
-        questionTextView.attributedText = TextAttributor.attributeText(question.prompt)
-        explanationTextView.attributedText = TextAttributor.attributeText(question.explanation)
+        questionView.topicLabel.text = question.topic.topic
+        questionView.questionTextView.attributedText = TextAttributor.attributeText(question.prompt)
+        questionView.explanationTextView.attributedText = TextAttributor.attributeText(question.explanation)
     }
     //end
     
@@ -55,21 +47,15 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
         //end
         
         if(test.submitAnswer(answerTextView.text)) {
-            feedbackLabel.text = "Right!"
-            feedbackLabel.textColor = UIColor.greenColor()
+            questionView.feedbackLabel.text = "Right!"
+            questionView.feedbackLabel.textColor = UIColor.greenColor()
         } else {
-            feedbackLabel.text = "Wrong!"
-            feedbackLabel.textColor = UIColor.redColor()
+            questionView.feedbackLabel.text = "Wrong!"
+            questionView.feedbackLabel.textColor = UIColor.redColor()
         }
         
         //Reuse
-        view.layoutIfNeeded()
-        explanationHeightConstraint.constant = self.UNBOUNDED_HEIGHT
-        explanationViewBottomMargin.constant = 8
-        UIView.animateWithDuration(0.5, animations: {
-            self.explanationView.alpha = 1
-            self.view.layoutIfNeeded()
-            }, completion: nil)
+        questionView.showExplanation()
         //end
     }
     
