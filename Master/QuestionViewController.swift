@@ -55,7 +55,7 @@ class QuestionViewController: UIViewController, UITextViewDelegate, KeyboardHand
         }
         
         //Reuse
-        questionView.showExplanation()
+        questionView.showExplanation({ self.view.layoutIfNeeded() })
         //end
     }
     

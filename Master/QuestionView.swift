@@ -48,13 +48,13 @@ import UIKit
         return view
     }
     
-    func showExplanation() {
-        view.layoutIfNeeded()
-        UIView.animateWithDuration(1, animations: {
+    func showExplanation(layoutSuperviewIfNeeded: ()->()) {
+        layoutSuperviewIfNeeded()
+        UIView.animateWithDuration(0.5, animations: {
             self.explanationViewHeightConstraint.constant = self.UNBOUNDED_HEIGHT
             self.explanationMarginConstraint.constant = 8
             self.explanationView.alpha = 1
-            self.view.layoutIfNeeded()
+            layoutSuperviewIfNeeded()
             }, completion: nil)
     }
 }
