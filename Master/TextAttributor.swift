@@ -30,16 +30,15 @@ class TextAttributor {
         //apply all attributes front to back
         while i < charArray.count {
             if let token = findNextToken(charArray, startIndex: i) {
+                let tag = tagFromToken(charArray, token: token)
                 //If closing, must match tag from tagStack
                 if charArray[token.start+1] == "/" {
-                    assert(tagStack.last != nil, "Closed tag without open tag in parseString.")
-                    let tag = String.fromCharArray(charArray, start: token.start+2, end: token.end-1)
-                    assert(tag == tagStack.last!.0, "Closed tag does not match opening tag in parseString.")
+                    assert(tagStack.last != nil, "Closed tag without open tag in attributeText.")
+                    assert(tag == tagStack.last!.0, "Closed tag does not match opening tag in attributeText.")
                     let begin = tagStack.removeLast().1
                     let attributor = getAttributorForTag(tag)
                     attributor!(string: result, range: NSMakeRange(begin, token.start-begin))
                 } else  {
-                    let tag = String.fromCharArray(charArray, start: token.start+1, end: token.end-1)
                     if getAttributorForTag(tag) != nil {
                         tagStack.append((tag, token.end))
                     }
@@ -49,18 +48,29 @@ class TextAttributor {
                 break
             }
         }
-        assert(tagStack.isEmpty, "Unclosed tags on stack after parsing in parseString.")
+        assert(tagStack.isEmpty, "Unclosed tags on stack after parsing in attributeText.")
         //remove all tags back to front
         i = charArray.count - 1
         while i >= 0 {
             if let token = findPreviousToken(charArray, startIndex: i) {
-                result.replaceCharactersInRange(NSMakeRange(token.start, token.end-token.start), withString: "")
+                let tag = tagFromToken(charArray, token: token)
+                if getAttributorForTag(tag) != nil {
+                    result.replaceCharactersInRange(NSMakeRange(token.start, token.end-token.start), withString: "")
+                }
                 i = token.start - 1
             } else {
                 break
             }
         }
         return result
+    }
+    
+    internal class func tagFromToken(arr: [Character], token: (start: Int, end: Int)) -> String {
+        if arr[token.start+1] == "/" {
+            return String.fromCharArray(arr, start: token.start+2, end: token.end-1)
+        } else {
+            return String.fromCharArray(arr, start: token.start+1, end: token.end-1)
+        }
     }
     
     internal class func findNextToken(arr: [Character], startIndex: Int) -> (start: Int, end: Int)? {
