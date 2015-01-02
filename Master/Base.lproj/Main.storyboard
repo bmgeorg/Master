@@ -57,7 +57,7 @@
         <!--Test-->
         <scene sceneID="60u-vZ-Clo">
             <objects>
-                <viewController id="2K0-8e-Oj9" customClass="QuestionViewController" customModule="Master" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2K0-8e-Oj9" customClass="TextQuestionViewController" customModule="Master" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GU5-Vz-iEu"/>
                         <viewControllerLayoutGuide type="bottom" id="mna-Xt-yXF"/>
@@ -75,7 +75,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="checkAnswer" destination="2K0-8e-Oj9" eventType="touchUpInside" id="xrR-aZ-Zk5"/>
+                                            <action selector="checkAnswer" destination="2K0-8e-Oj9" eventType="touchUpInside" id="5jk-rh-QL2"/>
                                         </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" text="Answer" translatesAutoresizingMaskIntoConstraints="NO" id="Y8A-Ec-SbD" userLabel="Answer View" customClass="PlaceholderTextView" customModule="Master" customModuleProvider="target">
@@ -86,9 +86,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="2K0-8e-Oj9" id="WZT-Ll-OeP"/>
-                                        </connections>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wkx-nG-fav" userLabel="Question View" customClass="QuestionView" customModule="Master" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="81"/>
@@ -131,21 +128,21 @@
                     <navigationItem key="navigationItem" title="Test" id="dzO-c3-KFu">
                         <barButtonItem key="rightBarButtonItem" title="Finish Early" id="6IH-Zw-eIi">
                             <connections>
-                                <action selector="finishTest:" destination="2K0-8e-Oj9" id="HBk-lY-MHu"/>
+                                <action selector="finishEarly:" destination="2K0-8e-Oj9" id="egO-jg-j3v"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="answerTextView" destination="Y8A-Ec-SbD" id="FGh-lz-jD8"/>
-                        <outlet property="enterButton" destination="DW6-NV-PZ0" id="Kik-o7-2dv"/>
-                        <outlet property="questionView" destination="Wkx-nG-fav" id="xt1-v0-BCc"/>
-                        <outlet property="scrollView" destination="8uN-wE-gIt" id="d0v-hI-hvD"/>
+                        <outlet property="answerTextView" destination="Y8A-Ec-SbD" id="8dF-1l-OkY"/>
+                        <outlet property="questionView" destination="Wkx-nG-fav" id="snz-hH-KmA"/>
+                        <outlet property="scrollView" destination="8uN-wE-gIt" id="wjG-ev-oUn"/>
+                        <outlet property="submitButton" destination="DW6-NV-PZ0" id="4rc-k6-efp"/>
                         <segue destination="XE0-rk-H5x" kind="show" identifier="showTestResults" id="FBx-QO-5Dt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWF-j7-Woe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2896" y="-382"/>
+            <point key="canvasLocation" x="3010" y="-547"/>
         </scene>
         <!--Results-->
         <scene sceneID="Yzr-80-WUM">
@@ -234,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5p-rn-jLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3680" y="-379"/>
+            <point key="canvasLocation" x="3824" y="-451"/>
         </scene>
         <!--Choose Topics-->
         <scene sceneID="aeh-3f-4gQ">
