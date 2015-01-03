@@ -18,11 +18,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="472" height="143"/>
+            <rect key="frame" x="0.0" y="0.0" width="472" height="166"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVY-kt-vNf" userLabel="Prompt view">
-                    <rect key="frame" x="0.0" y="0.0" width="472" height="64"/>
+                    <rect key="frame" x="0.0" y="0.0" width="472" height="81"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Topic" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GS-sl-nc2">
                             <rect key="frame" x="8" y="8" width="456" height="20"/>
@@ -30,12 +30,9 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Question" translatesAutoresizingMaskIntoConstraints="NO" id="6Qj-Qb-4lT" userLabel="Question Text View" customClass="ResizingTextView" customModule="Master" customModuleProvider="target">
-                            <rect key="frame" x="8" y="36" width="456" height="20"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" text="Question" translatesAutoresizingMaskIntoConstraints="NO" id="6Qj-Qb-4lT" userLabel="Question Text View">
+                            <rect key="frame" x="8" y="36" width="456" height="37"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="20" id="HyQ-MH-MOf"/>
-                            </constraints>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -59,12 +56,9 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Explanation" translatesAutoresizingMaskIntoConstraints="NO" id="y05-qI-Dfx" customClass="ResizingTextView" customModule="Master" customModuleProvider="target">
-                            <rect key="frame" x="8" y="-28" width="456" height="20"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" text="Explanation" translatesAutoresizingMaskIntoConstraints="NO" id="y05-qI-Dfx">
+                            <rect key="frame" x="8" y="-45" width="456" height="37"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="20" id="7QT-7D-Hwy"/>
-                            </constraints>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
@@ -93,7 +87,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="618" y="-45.5"/>
+            <point key="canvasLocation" x="616" y="42"/>
         </view>
     </objects>
 </document>

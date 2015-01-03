@@ -26,11 +26,6 @@ class KeyboardHandlingScrollView: UIScrollView, UIGestureRecognizerDelegate {
         self.addGestureRecognizer(tapGR!)
     }
     
-    override init() {
-        super.init()
-        setup()
-    }
-    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()

@@ -38,9 +38,11 @@
 		8BB640881A4A05C700F6A4A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BB640861A4A05C700F6A4A1 /* LaunchScreen.xib */; };
 		8BB640941A4A05C700F6A4A1 /* MasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB640931A4A05C700F6A4A1 /* MasterTests.swift */; };
 		8BC3B0601A5473EE00385B18 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC3B05F1A5473EE00385B18 /* StringExtensions.swift */; };
+		8BF5B66E1A58A2E60080B50C /* CodeSpotQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5B66D1A58A2E60080B50C /* CodeSpotQuestionViewController.swift */; };
+		8BF5B6701A58A3B90080B50C /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF5B66F1A58A3B90080B50C /* CodeView.swift */; };
+		8BF5B6721A58A3C70080B50C /* CodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BF5B6711A58A3C70080B50C /* CodeView.xib */; };
 		8BF824231A54532B00165965 /* TextAttributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF824221A54532B00165965 /* TextAttributor.swift */; };
 		8BF824251A54624F00165965 /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF824241A54624F00165965 /* UIFontExtensions.swift */; };
-		8BFA20601A50D2A200A7312C /* ResizingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA205F1A50D2A200A7312C /* ResizingTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,9 +91,11 @@
 		8BB640921A4A05C700F6A4A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BB640931A4A05C700F6A4A1 /* MasterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTests.swift; sourceTree = "<group>"; };
 		8BC3B05F1A5473EE00385B18 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		8BF5B66D1A58A2E60080B50C /* CodeSpotQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeSpotQuestionViewController.swift; sourceTree = "<group>"; };
+		8BF5B66F1A58A3B90080B50C /* CodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		8BF5B6711A58A3C70080B50C /* CodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CodeView.xib; sourceTree = "<group>"; };
 		8BF824221A54532B00165965 /* TextAttributor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAttributor.swift; sourceTree = "<group>"; };
 		8BF824241A54624F00165965 /* UIFontExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
-		8BFA205F1A50D2A200A7312C /* ResizingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizingTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 			children = (
 				8B4C8A4D1A56FC9B001887B3 /* TextQuestionViewController.swift */,
 				8B4C8A501A570653001887B3 /* BinaryQuestionViewController.swift */,
+				8BF5B66D1A58A2E60080B50C /* CodeSpotQuestionViewController.swift */,
 			);
 			name = QuestionVCs;
 			sourceTree = "<group>";
@@ -233,11 +238,12 @@
 		8BFA20611A50D2A800A7312C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8BF5B66F1A58A3B90080B50C /* CodeView.swift */,
+				8BF5B6711A58A3C70080B50C /* CodeView.xib */,
 				8B40DBD31A562A410099D90E /* QuestionView.swift */,
 				8B9C329D1A562FCD00411573 /* QuestionView.xib */,
 				8B083AC91A4DD0B2003935C7 /* TopicCell.swift */,
 				8B21106D1A538857006BD613 /* ResultCell.swift */,
-				8BFA205F1A50D2A200A7312C /* ResizingTextView.swift */,
 				8B2521C21A535B7B003CC403 /* PlaceholderTextView.swift */,
 				8B0B30951A51F28A005B35C7 /* HighlightableButton.swift */,
 				8B2CF2051A53277E009D31A2 /* KeyboardHandlingScrollView.swift */,
@@ -328,6 +334,7 @@
 			files = (
 				8BB640831A4A05C700F6A4A1 /* Main.storyboard in Resources */,
 				8B0340131A55E04A009504C6 /* checkmark.png in Resources */,
+				8BF5B6721A58A3C70080B50C /* CodeView.xib in Resources */,
 				8B9C329E1A562FCD00411573 /* QuestionView.xib in Resources */,
 				8B9E9A711A55033E004A625A /* checkmarkBorder.png in Resources */,
 				8BB640881A4A05C700F6A4A1 /* LaunchScreen.xib in Resources */,
@@ -362,11 +369,12 @@
 				8B4C8A511A570653001887B3 /* BinaryQuestionViewController.swift in Sources */,
 				8BF824231A54532B00165965 /* TextAttributor.swift in Sources */,
 				8B03400E1A55A502009504C6 /* MenuViewController.swift in Sources */,
+				8BF5B66E1A58A2E60080B50C /* CodeSpotQuestionViewController.swift in Sources */,
 				8BC3B0601A5473EE00385B18 /* StringExtensions.swift in Sources */,
 				8B0B30921A513B4B005B35C7 /* Test.swift in Sources */,
 				8B4638211A4A30AF008E3BA3 /* Question.swift in Sources */,
 				8B4638201A4A30AF008E3BA3 /* QuestionBank.swift in Sources */,
-				8BFA20601A50D2A200A7312C /* ResizingTextView.swift in Sources */,
+				8BF5B6701A58A3B90080B50C /* CodeView.swift in Sources */,
 				8B46385A1A4A4D8D008E3BA3 /* QuestionViewController.swift in Sources */,
 				8BB6407E1A4A05C700F6A4A1 /* AppDelegate.swift in Sources */,
 				8B083AC81A4DCD03003935C7 /* TopicListViewController.swift in Sources */,

@@ -78,12 +78,9 @@
                                             <action selector="checkAnswer" destination="2K0-8e-Oj9" eventType="touchUpInside" id="5jk-rh-QL2"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" text="Answer" translatesAutoresizingMaskIntoConstraints="NO" id="Y8A-Ec-SbD" userLabel="Answer View" customClass="PlaceholderTextView" customModule="Master" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="89" width="535" height="40"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" text="Answer" translatesAutoresizingMaskIntoConstraints="NO" id="Y8A-Ec-SbD" userLabel="Answer View" customClass="PlaceholderTextView" customModule="Master" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="89" width="535" height="37"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="IWg-Zq-2ru"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no"/>
                                     </textView>
@@ -480,6 +477,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="zph-cM-JP6"/>
         <segue reference="KAo-GT-1mt"/>
-        <segue reference="MVB-7W-EYj"/>
+        <segue reference="FBx-QO-5Dt"/>
     </inferredMetricsTieBreakers>
 </document>

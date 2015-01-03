@@ -9,11 +9,13 @@
 import UIKit
 
 //Must be created within a storyboard/xib file
-class PlaceholderTextView: ResizingTextView {
+class PlaceholderTextView: UITextView {
     var placeHolderLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("textChanged:"), name:UITextViewTextDidChangeNotification, object: nil);
+        
         placeHolderLabel = UILabel()
         placeHolderLabel.font = self.font
         placeHolderLabel.textColor = UIColor.lightGrayColor()
@@ -35,8 +37,11 @@ class PlaceholderTextView: ResizingTextView {
         self.sendSubviewToBack(placeHolderLabel)
     }
     
-    override func textDidChange(notification: NSNotification) {
-        super.textDidChange(notification)
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
+    
+    func textChanged(notification: NSNotification) {
         if self.text == "" {
             placeHolderLabel.alpha = 1
         } else {

@@ -22,9 +22,4 @@ class HighlightableButton: UIButton {
         super.init(frame: frame)
         setTitleTint()
     }
-    
-    override init() {
-        super.init()
-        setTitleTint()
-    }
 }
