@@ -51,19 +51,26 @@ class QuestionViewController: UIViewController {
     }
     
     func showNextQuestion() {
-        performSegueWithIdentifier("showBinaryQuestion", sender: self)
+        let type = QuestionType(rawValue: question.type)
+        assert(type != nil, "Bad data. QuestionType enum could not be created from firstQuestion.type")
+        switch type! {
+        case QuestionType.Text:
+            performSegueWithIdentifier("showTextQuestion", sender: self)
+        case QuestionType.Binary:
+            performSegueWithIdentifier("showBinaryQuestion", sender: self)
+        default:
+            assertionFailure("Unrecognized QuestionType in QuestionViewController showNextQuestion()")
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showTestResults" {
             let dest = segue.destinationViewController as TestReportViewController
             dest.report = test.createTestReport()
-        } else if segue.identifier == "showBinaryQuestion" {
+        } else {
             let dest = segue.destinationViewController as QuestionViewController
             dest.test = test
             dest.question = test.nextQuestion()
-        } else {
-            assertionFailure("Unrecognized segue identifier from QuestionViewController.")
         }
     }
 }

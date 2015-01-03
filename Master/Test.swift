@@ -14,6 +14,7 @@ class Test {
     let questionList: [Question]
     var solved: [Bool]
     var questionIndex = -1
+    var currentQuestion: Question?
     
     let NUM_QUESTIONS = 4
     
@@ -48,27 +49,27 @@ class Test {
         return questionIndex+1 < NUM_QUESTIONS
     }
     
-    //returns nil if test is finished
     func nextQuestion() -> Question {
         assert(hasNextQuestion(), "nextQuestion() called and there are no more questions.")
-        return questionList[++questionIndex]
+        currentQuestion = questionList[++questionIndex]
+        return currentQuestion!
     }
     
     func submitAnswer(answer: String) -> Bool {
         assert(questionIndex >= 0, "submitAnswer(...) called before test is started.")
         assert(questionIndex < NUM_QUESTIONS, "submitAnswer(...) called after test is finished.")
-        let currentQuestion = questionList[questionIndex]
         RLMRealm.defaultRealm().beginWriteTransaction()
-        if currentQuestion.answer.uppercaseString == answer.uppercaseString {
-            currentQuestion.solved = true
+        var isCorrect = false
+        if currentQuestion!.answer.uppercaseString == answer.uppercaseString {
+            currentQuestion!.solved = true
             solved[questionIndex] = true
-            RLMRealm.defaultRealm().commitWriteTransaction()
-            return true
+            isCorrect = true
         } else {
             solved[questionIndex] = false
-            RLMRealm.defaultRealm().commitWriteTransaction()
-            return false
+            isCorrect = false
         }
+        RLMRealm.defaultRealm().commitWriteTransaction()
+        return isCorrect
     }
     
     

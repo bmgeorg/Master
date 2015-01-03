@@ -90,7 +90,16 @@ class TopicListViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         createdTest = Test(topics: chosenTopics)
         firstQuestion = createdTest!.nextQuestion()
-        performSegueWithIdentifier("showFirstTextQuestion", sender: self)
+        let type = QuestionType(rawValue: firstQuestion!.type)
+        assert(type != nil, "Bad data. QuestionType enum could not be created from firstQuestion.type")
+        switch type! {
+        case QuestionType.Text:
+            performSegueWithIdentifier("showFirstTextQuestion", sender: self)
+        case QuestionType.Binary:
+            performSegueWithIdentifier("showFirstBinaryQuestion", sender: self)
+        default:
+            assertionFailure("Unrecognized QuestionType in TopicListViewController startTest()")
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
