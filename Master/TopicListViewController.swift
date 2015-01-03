@@ -39,7 +39,7 @@ class TopicListViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TopicCell", forIndexPath: indexPath) as TopicCell
         let topic = topics[UInt(indexPath.row)] as Topic
-        cell.topicLabel.text = topic.topic
+        cell.topicLabel.text = topic.name
         cell.percentLabel.text = String(format: "%.1f%%", Double(topic.numSolved)/Double(topic.questions.count))
         return cell
     }

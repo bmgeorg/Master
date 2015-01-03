@@ -20,7 +20,7 @@ class QuestionViewController: UIViewController {
     }
     
     func setupQuestionView(questionView: QuestionView) {
-        questionView.topicLabel.text = question.topic.topic
+        questionView.topicLabel.text = question.topic.name
         questionView.questionTextView.attributedText = TextAttributor.attributeText(question.prompt)
         questionView.explanationTextView.attributedText = TextAttributor.attributeText(question.explanation)
     }
