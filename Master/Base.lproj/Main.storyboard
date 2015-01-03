@@ -106,13 +106,13 @@
                                     <constraint firstItem="Y8A-Ec-SbD" firstAttribute="leading" secondItem="8uN-wE-gIt" secondAttribute="leading" id="uAe-l6-F1K"/>
                                 </constraints>
                             </scrollView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tiz-BY-hbb" userLabel="Hidden Button - Self Segue Outlet">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tiz-BY-hbb" userLabel="Hidden Button - Self Segue Outlet">
                                 <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
                                 <state key="normal" title=" ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2K0-8e-Oj9" kind="custom" identifier="showNextQuestion" customClass="ReplaceSegue" customModule="Master" customModuleProvider="target" id="nMH-yh-fv7"/>
+                                    <segue destination="2K0-8e-Oj9" kind="custom" identifier="showTextQuestion" customClass="ReplaceSegue" customModule="Master" customModuleProvider="target" id="nMH-yh-fv7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -138,11 +138,101 @@
                         <outlet property="scrollView" destination="8uN-wE-gIt" id="wjG-ev-oUn"/>
                         <outlet property="submitButton" destination="DW6-NV-PZ0" id="4rc-k6-efp"/>
                         <segue destination="XE0-rk-H5x" kind="show" identifier="showTestResults" id="FBx-QO-5Dt"/>
+                        <segue destination="FfF-he-K22" kind="custom" identifier="showBinaryQuestion" customClass="ReplaceSegue" customModule="Master" customModuleProvider="target" id="KAo-GT-1mt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWF-j7-Woe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3010" y="-547"/>
+            <point key="canvasLocation" x="3048" y="-867"/>
+        </scene>
+        <!--Test-->
+        <scene sceneID="dOk-pL-O2k">
+            <objects>
+                <viewController id="FfF-he-K22" customClass="BinaryQuestionViewController" customModule="Master" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Nu-F7-m6U"/>
+                        <viewControllerLayoutGuide type="bottom" id="0mM-1P-Vb2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bb7-vA-Kmv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pya-AA-FqM">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uzb-YA-UP6" customClass="QuestionView" customModule="Master" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="81"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="81" placeholder="YES" id="KXG-GL-Pbz"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rq-FK-uUf">
+                                        <rect key="frame" x="255" y="89" width="30" height="30"/>
+                                        <state key="normal" title="Yes">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="answerYes" destination="FfF-he-K22" eventType="touchUpInside" id="u7A-MK-IRr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHY-2q-wZb">
+                                        <rect key="frame" x="345" y="89" width="30" height="30"/>
+                                        <state key="normal" title="No">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="answerNo" destination="FfF-he-K22" eventType="touchUpInside" id="DQ3-hE-U1p"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="5rq-FK-uUf" secondAttribute="bottom" id="0KE-i7-yKH"/>
+                                    <constraint firstItem="5rq-FK-uUf" firstAttribute="centerY" secondItem="iHY-2q-wZb" secondAttribute="centerY" id="4D6-Rf-OFp"/>
+                                    <constraint firstItem="5rq-FK-uUf" firstAttribute="centerX" secondItem="Pya-AA-FqM" secondAttribute="centerX" constant="-30" id="K0o-yd-LZm"/>
+                                    <constraint firstItem="uzb-YA-UP6" firstAttribute="leading" secondItem="Pya-AA-FqM" secondAttribute="leading" id="Skn-Jq-ssG"/>
+                                    <constraint firstAttribute="trailing" secondItem="uzb-YA-UP6" secondAttribute="trailing" id="bNc-vj-yGE"/>
+                                    <constraint firstItem="iHY-2q-wZb" firstAttribute="leading" secondItem="5rq-FK-uUf" secondAttribute="trailing" constant="60" id="eSx-bg-wFa"/>
+                                    <constraint firstItem="uzb-YA-UP6" firstAttribute="top" secondItem="Pya-AA-FqM" secondAttribute="top" id="faZ-vg-OG3"/>
+                                    <constraint firstItem="5rq-FK-uUf" firstAttribute="top" secondItem="uzb-YA-UP6" secondAttribute="bottom" constant="8" id="j9Q-3J-oVP"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RgP-OO-qW6" userLabel="Hidden Button - Self Segue Outlet">
+                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <state key="normal" title=" ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="FfF-he-K22" kind="custom" identifier="showBinaryQuestion" customClass="ReplaceSegue" customModule="Master" customModuleProvider="target" id="GLC-Zb-e1A"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pya-AA-FqM" firstAttribute="top" secondItem="bb7-vA-Kmv" secondAttribute="top" id="31Z-8w-jLr"/>
+                            <constraint firstItem="Pya-AA-FqM" firstAttribute="leading" secondItem="bb7-vA-Kmv" secondAttribute="leading" id="Tzw-Fe-kyi"/>
+                            <constraint firstAttribute="trailing" secondItem="Pya-AA-FqM" secondAttribute="trailing" id="Uw3-LT-3U3"/>
+                            <constraint firstItem="0mM-1P-Vb2" firstAttribute="top" secondItem="Pya-AA-FqM" secondAttribute="bottom" id="WUd-vr-cWV"/>
+                            <constraint firstAttribute="width" secondItem="uzb-YA-UP6" secondAttribute="width" id="xrs-uo-c5e"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Test" id="VVg-OU-qR2">
+                        <barButtonItem key="rightBarButtonItem" title="Finish Early" id="of7-NJ-6Ib">
+                            <connections>
+                                <action selector="finishEarly:" destination="FfF-he-K22" id="mw5-Nk-BEi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="noButton" destination="iHY-2q-wZb" id="dFV-vL-dPa"/>
+                        <outlet property="questionView" destination="uzb-YA-UP6" id="vWl-eq-PKl"/>
+                        <outlet property="yesButton" destination="5rq-FK-uUf" id="U11-qt-BtD"/>
+                        <segue destination="2K0-8e-Oj9" kind="custom" identifier="showTextQuestion" customClass="ReplaceSegue" customModule="Master" customModuleProvider="target" id="zph-cM-JP6"/>
+                        <segue destination="XE0-rk-H5x" kind="custom" identifier="showTestResults" customClass="ReplaceSegue" customModule="Master" customModuleProvider="target" id="MVB-7W-EYj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dF5-ai-XL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3048" y="-71"/>
         </scene>
         <!--Results-->
         <scene sceneID="Yzr-80-WUM">
@@ -157,7 +247,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lTV-qR-esg">
-                                <rect key="frame" x="16" y="144" width="568" height="436"/>
+                                <rect key="frame" x="16" y="100" width="568" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" id="X6I-gV-2bE" customClass="ResultCell" customModule="Master" customModuleProvider="target">
@@ -200,7 +290,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You solved 5/10 questions!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSD-2f-t0X" userLabel="You Solved">
-                                <rect key="frame" x="16" y="89" width="568" height="30"/>
+                                <rect key="frame" x="16" y="45" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -319,7 +409,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="2K0-8e-Oj9" kind="show" identifier="startTest" id="aW6-d1-MWE"/>
+                                            <action selector="startTest" destination="Cb3-x1-yjm" eventType="touchUpInside" id="1w7-KB-xGE"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LR1-O7-yz5" userLabel="Separator">
@@ -357,11 +447,13 @@
                     <connections>
                         <outlet property="chooseTopicsButton" destination="YPe-AF-2bG" id="soy-3p-gVX"/>
                         <outlet property="tableView" destination="adj-dw-pS3" id="5Dz-Mi-tGy"/>
+                        <segue destination="2K0-8e-Oj9" kind="show" identifier="showFirstTextQuestion" id="P6l-wm-2kI"/>
+                        <segue destination="FfF-he-K22" kind="show" identifier="showFirstBinaryQuestion" id="rJZ-I7-Ng5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fsj-WL-om1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2082" y="-382"/>
+            <point key="canvasLocation" x="2140" y="-438"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ff9-Nx-dG3">
@@ -386,6 +478,8 @@
         <image name="CheckmarkBorder" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aW6-d1-MWE"/>
+        <segue reference="zph-cM-JP6"/>
+        <segue reference="KAo-GT-1mt"/>
+        <segue reference="MVB-7W-EYj"/>
     </inferredMetricsTieBreakers>
 </document>

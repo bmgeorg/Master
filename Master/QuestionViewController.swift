@@ -14,6 +14,11 @@ class QuestionViewController: UIViewController {
     var question: Question!
     var test: Test!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.hidesBackButton = true
+    }
+    
     func setupQuestionView(questionView: QuestionView) {
         questionView.topicLabel.text = question.topic.topic
         questionView.questionTextView.attributedText = TextAttributor.attributeText(question.prompt)
@@ -46,14 +51,14 @@ class QuestionViewController: UIViewController {
     }
     
     func showNextQuestion() {
-        performSegueWithIdentifier("showNextQuestion", sender: self)
+        performSegueWithIdentifier("showBinaryQuestion", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showTestResults" {
             let dest = segue.destinationViewController as TestReportViewController
             dest.report = test.createTestReport()
-        } else if segue.identifier == "showNextQuestion" {
+        } else if segue.identifier == "showBinaryQuestion" {
             let dest = segue.destinationViewController as QuestionViewController
             dest.test = test
             dest.question = test.nextQuestion()

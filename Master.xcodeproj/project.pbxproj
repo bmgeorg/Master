@@ -29,6 +29,7 @@
 		8B4638281A4A315A008E3BA3 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4638271A4A315A008E3BA3 /* RLMSupport.swift */; };
 		8B46385A1A4A4D8D008E3BA3 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4638591A4A4D8D008E3BA3 /* QuestionViewController.swift */; };
 		8B4C8A4E1A56FC9B001887B3 /* TextQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C8A4D1A56FC9B001887B3 /* TextQuestionViewController.swift */; };
+		8B4C8A511A570653001887B3 /* BinaryQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C8A501A570653001887B3 /* BinaryQuestionViewController.swift */; };
 		8B9C329E1A562FCD00411573 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B9C329D1A562FCD00411573 /* QuestionView.xib */; };
 		8B9E9A711A55033E004A625A /* checkmarkBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E9A701A55033E004A625A /* checkmarkBorder.png */; };
 		8BB6407E1A4A05C700F6A4A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB6407D1A4A05C700F6A4A1 /* AppDelegate.swift */; };
@@ -75,6 +76,7 @@
 		8B4638271A4A315A008E3BA3 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		8B4638591A4A4D8D008E3BA3 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		8B4C8A4D1A56FC9B001887B3 /* TextQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextQuestionViewController.swift; sourceTree = "<group>"; };
+		8B4C8A501A570653001887B3 /* BinaryQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryQuestionViewController.swift; sourceTree = "<group>"; };
 		8B9C329D1A562FCD00411573 /* QuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
 		8B9E9A701A55033E004A625A /* checkmarkBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmarkBorder.png; sourceTree = "<group>"; };
 		8BB640781A4A05C700F6A4A1 /* Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Master.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				8B4C8A4D1A56FC9B001887B3 /* TextQuestionViewController.swift */,
+				8B4C8A501A570653001887B3 /* BinaryQuestionViewController.swift */,
 			);
 			name = QuestionVCs;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				8B083ACA1A4DD0B2003935C7 /* TopicCell.swift in Sources */,
 				8B2CF2061A53277E009D31A2 /* KeyboardHandlingScrollView.swift in Sources */,
 				8B0B30941A51C74F005B35C7 /* TestReport.swift in Sources */,
+				8B4C8A511A570653001887B3 /* BinaryQuestionViewController.swift in Sources */,
 				8BF824231A54532B00165965 /* TextAttributor.swift in Sources */,
 				8B03400E1A55A502009504C6 /* MenuViewController.swift in Sources */,
 				8BC3B0601A5473EE00385B18 /* StringExtensions.swift in Sources */,

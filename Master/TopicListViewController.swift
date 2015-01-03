@@ -12,6 +12,8 @@ import Realm
 class TopicListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var topics: RLMResults!
+    var createdTest: Test?
+    var firstQuestion: Question?
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var chooseTopicsButton: UIButton!
     
@@ -71,26 +73,29 @@ class TopicListViewController: UIViewController, UITableViewDelegate, UITableVie
         })
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "startTest") {
-            var chosenTopics = [Topic]()
-            let indexPaths = self.tableView.indexPathsForSelectedRows()
-            if let paths = indexPaths {
-                for object in paths {
-                    let path = object as NSIndexPath
-                    chosenTopics.append(topics[UInt(path.row)] as Topic)
-                }
-            } else {
-                //choose all topics
-                for object in topics {
-                    let topic = object as Topic
-                    chosenTopics.append(topic)
-                }
+    @IBAction func startTest() {
+        var chosenTopics = [Topic]()
+        let indexPaths = self.tableView.indexPathsForSelectedRows()
+        if let paths = indexPaths {
+            for object in paths {
+                let path = object as NSIndexPath
+                chosenTopics.append(topics[UInt(path.row)] as Topic)
             }
-            let test = Test(topics: chosenTopics)
-            let dest = segue.destinationViewController as QuestionViewController
-            dest.test = test
-            dest.question = test.nextQuestion()
+        } else {
+            //choose all topics
+            for object in topics {
+                let topic = object as Topic
+                chosenTopics.append(topic)
+            }
         }
+        createdTest = Test(topics: chosenTopics)
+        firstQuestion = createdTest!.nextQuestion()
+        performSegueWithIdentifier("showFirstTextQuestion", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dest = segue.destinationViewController as QuestionViewController
+        dest.test = createdTest!
+        dest.question = firstQuestion!
     }
 }
