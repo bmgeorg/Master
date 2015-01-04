@@ -51,8 +51,9 @@ class QuestionViewController: UIViewController {
     }
     
     func showNextQuestion() {
-        let type = QuestionType(rawValue: question.type)
-        assert(type != nil, "Bad data. QuestionType enum could not be created from firstQuestion.type")
+        let nextQuestion = test.nextQuestion()
+        let type = QuestionType(rawValue: nextQuestion.type)
+        assert(type != nil, "Bad data. QuestionType enum could not be created from question.type")
         switch type! {
         case QuestionType.Text:
             performSegueWithIdentifier("showTextQuestion", sender: self)
@@ -70,7 +71,7 @@ class QuestionViewController: UIViewController {
         } else {
             let dest = segue.destinationViewController as QuestionViewController
             dest.test = test
-            dest.question = test.nextQuestion()
+            dest.question = test.currentQuestion!
         }
     }
 }
