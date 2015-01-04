@@ -97,8 +97,8 @@ class TopicListViewController: UIViewController, UITableViewDelegate, UITableVie
             performSegueWithIdentifier("showFirstTextQuestion", sender: self)
         case QuestionType.Binary:
             performSegueWithIdentifier("showFirstBinaryQuestion", sender: self)
-        default:
-            assertionFailure("Unrecognized QuestionType in TopicListViewController startTest()")
+        case QuestionType.CodeSpot:
+            performSegueWithIdentifier("showFirstCodeSpotQuestion", sender: self)
         }
     }
     

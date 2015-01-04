@@ -29,4 +29,5 @@ class Question: RLMObject {
 enum QuestionType: String {
     case Text = "Text"
     case Binary = "Binary"
+    case CodeSpot = "Code Spot"
 }

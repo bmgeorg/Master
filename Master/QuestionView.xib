@@ -48,7 +48,7 @@
                         <constraint firstItem="5GS-sl-nc2" firstAttribute="leading" secondItem="FVY-kt-vNf" secondAttribute="leadingMargin" id="xKS-MY-ivd"/>
                     </constraints>
                 </view>
-                <view alpha="0.0" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xKJ-84-1xP" userLabel="Explanation View">
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKJ-84-1xP" userLabel="Explanation View">
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Right!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8M-FD-DZ0" userLabel="Feedback">
                             <rect key="frame" x="8" y="8" width="456" height="20"/>

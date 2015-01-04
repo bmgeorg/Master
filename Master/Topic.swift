@@ -28,6 +28,7 @@ class Topic: RLMObject {
 enum TopicName: String {
     case ControlFlow = "Control Flow"
     case Generics = "Generics"
+    case Nonsense = "Nonsense"
     
     func order() -> Int {
         switch self {
@@ -35,6 +36,8 @@ enum TopicName: String {
             return 0
         case .Generics:
             return 1
+        case .Nonsense:
+            return 2
         }
     }
 }

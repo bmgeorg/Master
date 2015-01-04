@@ -19,7 +19,7 @@ import UIKit
     @IBOutlet weak var explanationViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var explanationMarginConstraint: NSLayoutConstraint!
     
-    let UNBOUNDED_HEIGHT: CGFloat = 999999999
+    let UNBOUNDED_HEIGHT: CGFloat = 9999999
     
     internal func setup() {
         view = loadViewFromNib()

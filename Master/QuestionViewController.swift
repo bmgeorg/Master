@@ -58,8 +58,8 @@ class QuestionViewController: UIViewController {
             performSegueWithIdentifier("showTextQuestion", sender: self)
         case QuestionType.Binary:
             performSegueWithIdentifier("showBinaryQuestion", sender: self)
-        default:
-            assertionFailure("Unrecognized QuestionType in QuestionViewController showNextQuestion()")
+        case QuestionType.CodeSpot:
+            performSegueWithIdentifier("showCodeSpotQuestion", sender: self)
         }
     }
     

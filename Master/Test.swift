@@ -16,7 +16,7 @@ class Test {
     var questionIndex = -1
     var currentQuestion: Question?
     
-    let NUM_QUESTIONS = 4
+    let NUM_QUESTIONS = 3
     
     init(topics: [Topic]) {
         self.topics = topics
