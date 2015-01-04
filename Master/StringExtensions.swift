@@ -28,6 +28,12 @@ extension String {
         }
     }
     
+    mutating func append(s: String) {
+        for c in s {
+            self.append(c)
+        }
+    }
+    
     func charAt(pos: Int) -> Character {
         return Array(self)[pos]
     }
