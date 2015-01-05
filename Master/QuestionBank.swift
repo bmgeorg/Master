@@ -113,8 +113,8 @@ class QuestionBank {
         var question = Question()
         question.type = QuestionType.CodeSpot.rawValue
         question.prompt = "Find the bug in the following code:"
-        question.answer = "42"
-        question.supplementary = "for(int i = 0; i < SIZE; i++) {\n x = 5^i; \n}"
+        question.answer = ""
+        question.supplementary = "<answer>for(int i = 0; i < SIZE; i++) {\n x = 5^i; \n}</answer>"
         question.explanation = "When defining a class, the type parameter, or type variable, is listed in angle quotes following the class name, in this case Box. The type parameter is distinct from the type argument. The type argument is chosen at instantiation time. The type parameter is the placeholder for the type argument in the declaration code."
         question.difficulty = 5
         questions.append(question)
@@ -122,8 +122,8 @@ class QuestionBank {
         question = Question()
         question.type = QuestionType.CodeSpot.rawValue
         question.prompt = "Find the bugs in the following code:"
-        question.answer = "42"
-        question.supplementary = "for(int i = 0; i < SIZE; i++) {\n x = 5^i; \n}"
+        question.answer = ""
+        question.supplementary = "for(int i = 0; i < SIZE; i++) {\n <answer>x = 5^i</answer>; \n}"
         question.explanation = "When defining a class, the type parameter, or type variable, is listed in angle quotes following the class name, in this case Box. The type parameter is distinct from the type argument. The type argument is chosen at instantiation time. The type parameter is the placeholder for the type argument in the declaration code."
         question.difficulty = 5
         questions.append(question)

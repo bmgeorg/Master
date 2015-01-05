@@ -17,6 +17,11 @@ class TextAttributor {
                 string.addAttribute(NSFontAttributeName, value: UIFont(name: "Menlo-Regular", size: bodySize)!, range: range)
             }
         }
+        if tag == "answer" {
+            return {string, range in
+                string.addAttribute("answer", value: true, range: range)
+            }
+        }
         return nil
     }
     
@@ -32,14 +37,14 @@ class TextAttributor {
             if let token = findNextToken(charArray, startIndex: i) {
                 let tag = tagFromToken(charArray, token: token)
                 //If closing, must match tag from tagStack
-                if charArray[token.start+1] == "/" {
-                    assert(tagStack.last != nil, "Closed tag without open tag in attributeText.")
-                    assert(tag == tagStack.last!.0, "Closed tag does not match opening tag in attributeText.")
-                    let begin = tagStack.removeLast().1
-                    let attributor = getAttributorForTag(tag)
-                    attributor!(string: result, range: NSMakeRange(begin, token.start-begin))
-                } else  {
-                    if getAttributorForTag(tag) != nil {
+                if getAttributorForTag(tag) != nil {
+                    if charArray[token.start+1] == "/" {
+                        assert(tagStack.last != nil, "Closed tag without open tag in attributeText.")
+                        assert(tag == tagStack.last!.0, "Closed tag does not match opening tag in attributeText.")
+                        let begin = tagStack.removeLast().1
+                        let attributor = getAttributorForTag(tag)
+                        attributor!(string: result, range: NSMakeRange(begin, token.start-begin))
+                    } else  {
                         tagStack.append((tag, token.end))
                     }
                 }

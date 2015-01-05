@@ -494,7 +494,7 @@
                                             <constraint firstAttribute="height" constant="81" placeholder="YES" id="dPk-Do-t5A"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7L-BS-yJ9" customClass="CodeView" customModule="Master" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7L-BS-yJ9" customClass="ClickableCodeView" customModule="Master" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="89" width="600" height="165"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>

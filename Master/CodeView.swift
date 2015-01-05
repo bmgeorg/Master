@@ -53,7 +53,6 @@ import UIKit
     internal func setLineNumbers() {
         /* Apple Bug in UITextView:
         After changing text in non-selectable, non-editable text view, the font of the text view is reset to some other (unknown to me) font. (I don't think the new font is even the same one as in storyboard.) To avoid this bug, we make the text view selectable just while the changes are being made. This prevents the font change. Thanks Apple. */
-        lineNumberTextView.selectable = true
         var count = 2
         let string = codeTextView.text
         lineNumberTextView.text = "1"
@@ -77,8 +76,8 @@ import UIKit
         })
     }
     
-    func setText(text: String) {
-        codeTextView.text = text
+    func setText(text: NSAttributedString) {
+        codeTextView.attributedText = text
         /* Apple Bug in UITextView:
         After changing text in non-selectable, non-editable text view, the font of the text view is reset to some other (unknown to me) font. (I don't think the new font is even the same one as in storyboard.) To avoid this bug, we make the text view selectable just while the changes are being made. This prevents the font change. Thanks Apple. */
         lineNumberTextView.selectable = true
