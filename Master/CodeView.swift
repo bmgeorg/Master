@@ -14,6 +14,8 @@ import UIKit
     @IBOutlet var lineNumberTextView: UITextView!
     @IBOutlet var codeTextView: UITextView!
     
+    var font: UIFont!
+    
     internal func setup() {
         view = loadViewFromNib()
         
@@ -21,6 +23,10 @@ import UIKit
         view.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
         
         addSubview(view)
+        
+        //set default font
+        let bodySize = UIFont.preferredFontSizeForTextStyle(UIFontTextStyleBody)
+        font = UIFont(name: "Menlo-Regular", size: bodySize)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -43,16 +49,20 @@ import UIKit
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.setLineNumbers()
-        let bodySize = UIFont.preferredFontSizeForTextStyle(UIFontTextStyleBody)
-        let theFont = UIFont(name: "Menlo-Regular", size: bodySize)
-        lineNumberTextView.font = theFont!
-        codeTextView.font = theFont!
+        
+        //Apple Bug in UITextView - See below
+        lineNumberTextView.selectable = true
+        codeTextView.selectable = true
+        
+        setLineNumbers()
+        lineNumberTextView.font = font
+        
+        //Apple Bug in UITextView - See below
+        lineNumberTextView.selectable = false
+        codeTextView.selectable = false
     }
     
     internal func setLineNumbers() {
-        /* Apple Bug in UITextView:
-        After changing text in non-selectable, non-editable text view, the font of the text view is reset to some other (unknown to me) font. (I don't think the new font is even the same one as in storyboard.) To avoid this bug, we make the text view selectable just while the changes are being made. This prevents the font change. Thanks Apple. */
         var count = 2
         let string = codeTextView.text
         lineNumberTextView.text = "1"
@@ -77,11 +87,20 @@ import UIKit
     }
     
     func setText(text: NSAttributedString) {
-        codeTextView.attributedText = text
         /* Apple Bug in UITextView:
         After changing text in non-selectable, non-editable text view, the font of the text view is reset to some other (unknown to me) font. (I don't think the new font is even the same one as in storyboard.) To avoid this bug, we make the text view selectable just while the changes are being made. This prevents the font change. Thanks Apple. */
         lineNumberTextView.selectable = true
+        codeTextView.selectable = true
+        
+        codeTextView.attributedText = text
         setLineNumbers()
+        
+        //Apple Bug in UITextView - See Above
         lineNumberTextView.selectable = false
+        codeTextView.selectable = false
+    }
+    
+    func defaultFont() -> UIFont {
+        return font
     }
 }

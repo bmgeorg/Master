@@ -21,8 +21,9 @@ class QuestionViewController: UIViewController {
     
     func setupQuestionView(questionView: QuestionView) {
         questionView.topicLabel.text = question.topic.name
-        questionView.questionTextView.attributedText = TextAttributor.attributeText(question.prompt)
-        questionView.explanationTextView.attributedText = TextAttributor.attributeText(question.explanation)
+        let viewFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        questionView.questionTextView.attributedText = TextAttributor.attributeText(question.prompt, defaultFont: viewFont)
+        questionView.explanationTextView.attributedText = TextAttributor.attributeText(question.explanation, defaultFont: viewFont)
     }
     
     func checkAnswer(answer: String, questionView: QuestionView?) -> Bool {

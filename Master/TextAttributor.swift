@@ -25,9 +25,9 @@ class TextAttributor {
         return nil
     }
     
-    class func attributeText(var str: String) -> NSAttributedString {
+    class func attributeText(var str: String, defaultFont: UIFont) -> NSAttributedString {
         var result = NSMutableAttributedString(string: str)
-        result.addAttribute(NSFontAttributeName, value: UIFont.preferredFontForTextStyle(UIFontTextStyleBody), range: NSMakeRange(0, result.length))
+        result.addAttribute(NSFontAttributeName, value: defaultFont, range: NSMakeRange(0, result.length))
         
         let charArray = Array(str)
         var i = 0

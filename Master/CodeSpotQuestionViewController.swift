@@ -16,8 +16,8 @@ class CodeSpotQuestionViewController: QuestionViewController, ClickableCodeViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         super.setupQuestionView(questionView)
-        let attributedText = TextAttributor.attributeText(question.supplementary)
-        codeView.setText(attributedText)
+        let text = TextAttributor.attributeText(question.supplementary, defaultFont: codeView.defaultFont())
+        codeView.setText(text)
         codeView.clickDelegate = self
         answerRange = findAnswerRange(codeView.codeTextView.textStorage)
         assert(answerRange != nil, "Bad data. No answer found in CodeSpot text.")
@@ -38,7 +38,10 @@ class CodeSpotQuestionViewController: QuestionViewController, ClickableCodeViewD
         
         //highlight correct text
         let newText = NSMutableAttributedString(attributedString: codeView.codeTextView.attributedText)
+        newText.addAttribute(NSFontAttributeName, value: codeView.defaultFont(), range: NSMakeRange(0, newText.length))
+        
         newText.addAttribute(NSForegroundColorAttributeName, value: codeView.codeTextView.tintColor, range: answerRange)
+        newText.addAttribute(NSFontAttributeName, value: UIFont(name: "Menlo-Regular", size:UIFont.preferredFontSizeForTextStyle(UIFontTextStyleBody))!, range: answerRange)
         codeView.setText(newText)
     }
     
